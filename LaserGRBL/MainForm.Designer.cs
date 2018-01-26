@@ -96,6 +96,7 @@
             this.donateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AwakeTimer = new System.Windows.Forms.Timer(this.components);
+            this.previewForm1 = new LaserGRBL.PreviewForm();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.StatusBar.SuspendLayout();
@@ -110,6 +111,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.previewForm1);
             this.splitContainer1.Panel1.Controls.Add(this.ConnectionForm);
             this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
             // 
@@ -562,6 +564,11 @@
             this.AwakeTimer.Interval = 20000;
             this.AwakeTimer.Tick += new System.EventHandler(this.AwakeTimer_Tick);
             // 
+            // previewForm1
+            // 
+            resources.ApplyResources(this.previewForm1, "previewForm1");
+            this.previewForm1.Name = "previewForm1";
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -627,7 +634,7 @@
 		private System.Windows.Forms.SplitContainer splitContainer1;
 		
 		private ConnectLogForm ConnectionForm;
-        private PreviewForm PreviewForm;
+       // private PreviewForm PreviewForm;
 		private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
 		private System.Windows.Forms.ToolStripMenuItem openSessionLogToolStripMenuItem;
@@ -655,6 +662,7 @@
 		private System.Windows.Forms.Timer AwakeTimer;
 		private System.Windows.Forms.ToolStripMenuItem MnStartFromPosition;
         private System.Windows.Forms.ToolStripMenuItem manualControlToolStripMenuItem;
+        private PreviewForm previewForm1;
     }
 }
 

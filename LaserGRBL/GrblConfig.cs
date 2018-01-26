@@ -79,7 +79,7 @@ namespace LaserGRBL
 			catch (Exception ex)
 			{
 				Cursor = DefaultCursor;
-				ActionResult(Strings.BoxReadConfigError);
+				ActionResult(Strings.BoxReadConfigError + ex);
 			}
 
 		}
@@ -121,6 +121,7 @@ namespace LaserGRBL
 			{
 				Cursor = DefaultCursor;
 				System.Windows.Forms.MessageBox.Show(String.Format(import ? Strings.BoxImportConfigWithError : Strings.BoxWriteConfigWithError, conf.Count, "unknown"), Strings.BoxExportConfigErrorTitle, System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                Console.WriteLine("Error" + ex);
 			}
 			finally
 			{

@@ -32,7 +32,7 @@ namespace LaserGRBL
 			Core.OnOverrideChange += RefreshOverride;
 			Core.IssueDetected += OnIssueDetected;
 
-			PreviewForm.SetCore(Core);
+            previewForm1.SetCore(Core);
 			ConnectionForm.SetCore(Core);
 			//JogForm.SetCore(Core);
 
@@ -140,7 +140,7 @@ namespace LaserGRBL
 		{
 			TimerUpdate();
 			ConnectionForm.TimerUpdate();
-			PreviewForm.TimerUpdate();
+            previewForm1.TimerUpdate();
 			//JogForm.Enabled = Core.JogEnabled;
 		}
 

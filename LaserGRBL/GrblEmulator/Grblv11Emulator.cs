@@ -147,6 +147,7 @@ namespace LaserGRBL.GrblEmulator
 			catch (Exception ex)
 			{
 				EnqueueTX("error");
+                Console.WriteLine("Error" + ex);
 			}
 		}
 
@@ -247,6 +248,7 @@ namespace LaserGRBL.GrblEmulator
 					}
 					catch (Exception ex)
 					{
+                        Console.WriteLine("Error" + ex);
 					}
 				}
 
@@ -282,6 +284,7 @@ namespace LaserGRBL.GrblEmulator
 					}
 					catch (Exception ex)
 					{
+                        Console.WriteLine("Error" + ex);
 					}
 				}
 

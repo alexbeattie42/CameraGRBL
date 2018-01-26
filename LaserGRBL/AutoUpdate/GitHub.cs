@@ -90,6 +90,7 @@ namespace LaserGRBL
 			catch (Exception ex)
 			{
 				oncomplete(null, new System.ComponentModel.AsyncCompletedEventArgs(new InvalidOperationException("Error downloading!"), true, null));
+                Console.WriteLine("Error" + ex);
 			}
 		}
 

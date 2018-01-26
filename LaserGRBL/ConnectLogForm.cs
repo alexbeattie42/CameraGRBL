@@ -21,7 +21,7 @@ namespace LaserGRBL
 		public ComWrapper.WrapperType currentWrapper;
 
 		GrblCore Core;
-		private string mLoadedFileName;
+		
 
 		public ConnectLogForm()
 		{
@@ -37,8 +37,7 @@ namespace LaserGRBL
 
 			CmdLog.SetCom(core);
 			
-			PB.Bars.Add(new LaserGRBL.UserControls.DoubleProgressBar.Bar(Color.LightSkyBlue));
-			PB.Bars.Add(new LaserGRBL.UserControls.DoubleProgressBar.Bar(Color.Pink));
+			
 
 			InitSpeedCB();
 			InitPortCB();
@@ -54,11 +53,7 @@ namespace LaserGRBL
 			{
 				Invoke(new GrblCore.dlgOnLoopCountChange(OnLoopCountChanged), current);
 			}
-			else
-			{
-				if (UDLoopCounter.Value != current)
-					UDLoopCounter.Value = current;
-			}
+		
 		}
 
 		private void RestoreConf()
@@ -134,20 +129,11 @@ namespace LaserGRBL
 			if (!Core.IsOpen && System.IO.Ports.SerialPort.GetPortNames().Length != CBPort.Items.Count)
 				InitPortCB();
 			
-			PB.Maximum = Core.ProgramTarget;
-			PB.Bars[0].Value = Core.ProgramSent;
-			PB.Bars[1].Value = Core.ProgramExecuted;
+			
 
 			string val = Tools.Utils.TimeSpanToString(Core.ProgramTime, Tools.Utils.TimePrecision.Minute, Tools.Utils.TimePrecision.Second, " ,", true);
 
-			if (val != "now")
-				PB.PercString = val;
-			else if (Core.InProgram)
-				PB.PercString = "0 sec";
-			else
-				PB.PercString = "";
 			
-			PB.Invalidate();
 			
 			
 			
@@ -164,7 +150,7 @@ namespace LaserGRBL
 			TT.SetToolTip(BtnConnectDisconnect, Core.IsOpen ? "Disconnect" : "Connect");
 			
 			BtnConnectDisconnect.UseAltImage = Core.IsOpen;
-			BtnRunProgram.Enabled = Core.CanSendFile;
+		
 			
 
 			bool old = TxtManualCommand.Enabled;
@@ -248,11 +234,7 @@ namespace LaserGRBL
 			UpdateConf();
 		}
 
-		private void UDLoopCounter_ValueChanged(object sender, EventArgs e)
-		{
-			Core.LoopCount = UDLoopCounter.Value;
-		}
-
+		
 		internal void OnColorChange()
 		{
 			CmdLog.Invalidate();

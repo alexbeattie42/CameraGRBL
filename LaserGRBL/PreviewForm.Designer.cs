@@ -41,14 +41,15 @@ namespace LaserGRBL
             this.MNAddCB = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addCustomButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TT = new System.Windows.Forms.ToolTip(this.components);
+            this.BtnReset = new LaserGRBL.UserControls.ImageButton();
+            this.BtnStop = new LaserGRBL.UserControls.ImageButton();
+            this.BtnResume = new LaserGRBL.UserControls.ImageButton();
+            this.BtnHoming = new LaserGRBL.UserControls.ImageButton();
+            this.BtnUnlock = new LaserGRBL.UserControls.ImageButton();
             this.MNRemEditCB = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.RemoveButton = new System.Windows.Forms.ToolStripMenuItem();
             this.editButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.BtnReset = new LaserGRBL.UserControls.ImageButton();
-            this.BtnHoming = new LaserGRBL.UserControls.ImageButton();
-            this.BtnStop = new LaserGRBL.UserControls.ImageButton();
-            this.BtnResume = new LaserGRBL.UserControls.ImageButton();
             this.MNAddCB.SuspendLayout();
             this.MNRemEditCB.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
@@ -67,34 +68,6 @@ namespace LaserGRBL
             resources.ApplyResources(this.addCustomButtonToolStripMenuItem, "addCustomButtonToolStripMenuItem");
             this.addCustomButtonToolStripMenuItem.Click += new System.EventHandler(this.addCustomButtonToolStripMenuItem_Click);
             // 
-            // MNRemEditCB
-            // 
-            this.MNRemEditCB.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.RemoveButton,
-            this.editButtonToolStripMenuItem});
-            this.MNRemEditCB.Name = "CMM";
-            resources.ApplyResources(this.MNRemEditCB, "MNRemEditCB");
-            // 
-            // RemoveButton
-            // 
-            this.RemoveButton.Name = "RemoveButton";
-            resources.ApplyResources(this.RemoveButton, "RemoveButton");
-            // 
-            // editButtonToolStripMenuItem
-            // 
-            this.editButtonToolStripMenuItem.Name = "editButtonToolStripMenuItem";
-            resources.ApplyResources(this.editButtonToolStripMenuItem, "editButtonToolStripMenuItem");
-            // 
-            // tableLayoutPanel8
-            // 
-            resources.ApplyResources(this.tableLayoutPanel8, "tableLayoutPanel8");
-            this.tableLayoutPanel8.Controls.Add(this.BtnReset, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.BtnHoming, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.BtnResume, 2, 0);
-            this.tableLayoutPanel8.Controls.Add(this.BtnStop, 3, 0);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.TabStop = true;
-            // 
             // BtnReset
             // 
             this.BtnReset.AltImage = null;
@@ -107,19 +80,6 @@ namespace LaserGRBL
             this.BtnReset.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.FixedSize;
             this.TT.SetToolTip(this.BtnReset, resources.GetString("BtnReset.ToolTip"));
             this.BtnReset.UseAltImage = false;
-            // 
-            // BtnHoming
-            // 
-            this.BtnHoming.AltImage = null;
-            resources.ApplyResources(this.BtnHoming, "BtnHoming");
-            this.BtnHoming.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.BtnHoming.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BtnHoming.Coloration = System.Drawing.Color.Empty;
-            this.BtnHoming.Image = ((System.Drawing.Image)(resources.GetObject("BtnHoming.Image")));
-            this.BtnHoming.Name = "BtnHoming";
-            this.BtnHoming.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.FixedSize;
-            this.TT.SetToolTip(this.BtnHoming, resources.GetString("BtnHoming.ToolTip"));
-            this.BtnHoming.UseAltImage = false;
             // 
             // BtnStop
             // 
@@ -147,6 +107,62 @@ namespace LaserGRBL
             this.TT.SetToolTip(this.BtnResume, resources.GetString("BtnResume.ToolTip"));
             this.BtnResume.UseAltImage = false;
             // 
+            // BtnHoming
+            // 
+            this.BtnHoming.AltImage = null;
+            resources.ApplyResources(this.BtnHoming, "BtnHoming");
+            this.BtnHoming.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BtnHoming.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BtnHoming.Coloration = System.Drawing.Color.Empty;
+            this.BtnHoming.Image = ((System.Drawing.Image)(resources.GetObject("BtnHoming.Image")));
+            this.BtnHoming.Name = "BtnHoming";
+            this.BtnHoming.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.FixedSize;
+            this.TT.SetToolTip(this.BtnHoming, resources.GetString("BtnHoming.ToolTip"));
+            this.BtnHoming.UseAltImage = false;
+            // 
+            // BtnUnlock
+            // 
+            this.BtnUnlock.AltImage = null;
+            resources.ApplyResources(this.BtnUnlock, "BtnUnlock");
+            this.BtnUnlock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BtnUnlock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BtnUnlock.Coloration = System.Drawing.Color.Empty;
+            this.BtnUnlock.Image = ((System.Drawing.Image)(resources.GetObject("BtnUnlock.Image")));
+            this.BtnUnlock.Name = "BtnUnlock";
+            this.BtnUnlock.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.FixedSize;
+            this.TT.SetToolTip(this.BtnUnlock, resources.GetString("BtnUnlock.ToolTip"));
+            this.BtnUnlock.UseAltImage = false;
+            this.BtnUnlock.Click += new System.EventHandler(this.BtnUnlock_Click);
+            // 
+            // MNRemEditCB
+            // 
+            this.MNRemEditCB.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.RemoveButton,
+            this.editButtonToolStripMenuItem});
+            this.MNRemEditCB.Name = "CMM";
+            resources.ApplyResources(this.MNRemEditCB, "MNRemEditCB");
+            // 
+            // RemoveButton
+            // 
+            this.RemoveButton.Name = "RemoveButton";
+            resources.ApplyResources(this.RemoveButton, "RemoveButton");
+            // 
+            // editButtonToolStripMenuItem
+            // 
+            this.editButtonToolStripMenuItem.Name = "editButtonToolStripMenuItem";
+            resources.ApplyResources(this.editButtonToolStripMenuItem, "editButtonToolStripMenuItem");
+            // 
+            // tableLayoutPanel8
+            // 
+            resources.ApplyResources(this.tableLayoutPanel8, "tableLayoutPanel8");
+            this.tableLayoutPanel8.Controls.Add(this.BtnReset, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.BtnResume, 5, 0);
+            this.tableLayoutPanel8.Controls.Add(this.BtnStop, 4, 0);
+            this.tableLayoutPanel8.Controls.Add(this.BtnUnlock, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.BtnHoming, 2, 0);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.TabStop = true;
+            // 
             // PreviewForm
             // 
             this.Controls.Add(this.tableLayoutPanel8);
@@ -167,8 +183,10 @@ namespace LaserGRBL
 		private System.Windows.Forms.ToolStripMenuItem editButtonToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private UserControls.ImageButton BtnReset;
+        private UserControls.ImageButton BtnStop;
+        //private UserControls.ImageButton BtnUnlock;
         private UserControls.ImageButton BtnHoming;
         private UserControls.ImageButton BtnResume;
-        private UserControls.ImageButton BtnStop;
+        private UserControls.ImageButton BtnUnlock;
     }
 }

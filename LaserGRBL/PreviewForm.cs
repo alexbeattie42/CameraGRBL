@@ -31,7 +31,7 @@ namespace LaserGRBL
 			Core = core;
 			
 
-			RefreshCustomButtons();
+			
 			TimerUpdate();
 		}
 
@@ -45,10 +45,9 @@ namespace LaserGRBL
 			BtnUnlock.Enabled = Core.CanUnlock;
 			BtnStop.Enabled = Core.CanFeedHold;
 			BtnResume.Enabled = Core.CanResumeHold;
-			BtnZeroing.Enabled = Core.CanDoZeroing;
+			//BtnZeroing.Enabled = Core.CanDoZeroing;
 
-			foreach (CustomButtonIB ib in CustomButtonArea.Controls)
-				ib.RefreshEnabled();
+			
 
 			ResumeLayout();
 		}
@@ -78,19 +77,10 @@ namespace LaserGRBL
 		private void addCustomButtonToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			CustomButtonForm.CreateAndShowDialog();
-			RefreshCustomButtons();
+		
 		}
 
-		private void RefreshCustomButtons()
-		{
-			CustomButtonArea.Controls.Clear();
-			foreach (CustomButton cb in CustomButtons.Buttons)
-			{
-				CustomButtonIB ib = new CustomButtonIB(Core, cb, this);
-				CustomButtonArea.Controls.Add(ib);
-			}
-
-		}
+		
 
 		private class CustomButtonIB : UserControls.ImageButton
 		{
@@ -121,8 +111,7 @@ namespace LaserGRBL
 
 
 				cms = new ContextMenuStrip();
-				cms.Items.Add(Strings.CustomButtonRemove, null, RemoveButton_Click);
-				cms.Items.Add(Strings.CustomButtonEdit, null, EditButton_Click);
+				
 
 				this.ContextMenuStrip = cms;
 			}
@@ -161,21 +150,7 @@ namespace LaserGRBL
 				base.OnClick(e);
 			}
 
-			private void RemoveButton_Click(object sender, EventArgs e)
-			{
-				if (MessageBox.Show(Strings.BoxDeleteCustomButtonText, Strings.BoxDeleteCustomButtonTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
-				{
-					CustomButtons.Remove(CustomButton);
-					CustomButtons.SaveFile();
-					form.RefreshCustomButtons();
-				}
-			}
-
-			private void EditButton_Click(object sender, EventArgs e)
-			{
-				CustomButtonForm.CreateAndShowDialog(CustomButton);
-				form.RefreshCustomButtons();
-			}
+			
 
 		}
 
@@ -214,6 +189,11 @@ namespace LaserGRBL
 		{
 			Core.SetNewZero();
 		}
-	}
+
+        private void BtnUnlock_Click(object sender, EventArgs e)
+        {
+            Core.GrblUnlock();
+        }
+    }
 
 }
