@@ -503,10 +503,15 @@ namespace LaserGRBL
 		{
 			Core.RunProgramFromPosition();
 		}
-	}
+
+        private void ConnectionForm_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 
 
-	public class MMnRenderer : ToolStripProfessionalRenderer
+    public class MMnRenderer : ToolStripProfessionalRenderer
 	{
 		public MMnRenderer() : base(new CustomMenuColor()) { }
 

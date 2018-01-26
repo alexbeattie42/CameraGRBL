@@ -32,7 +32,7 @@ namespace LaserGRBL
 		public void SetCore(GrblCore core)
 		{
 			Core = core;
-			Core.OnFileLoaded += OnFileLoaded;
+		
 			Core.OnLoopCountChange += OnLoopCountChanged;
 
 			CmdLog.SetCom(core);
@@ -69,19 +69,6 @@ namespace LaserGRBL
 				TxtAddress.Text = (string)Settings.GetObject("Telnet Address", "127.0.0.1:23");	
 			else if (currentWrapper == ComWrapper.WrapperType.LaserWebESP8266)
 				TxtAddress.Text = (string)Settings.GetObject("Websocket URL", "ws://127.0.0.1:81/"); 
-		}
-
-		void OnFileLoaded(long elapsed, string filename)
-		{
-			if (InvokeRequired)
-			{
-				Invoke(new GrblFile.OnFileLoadedDlg(OnFileLoaded), elapsed, filename);
-			}
-			else
-			{
-				mLoadedFileName = filename;
-				TbFileName.Text = System.IO.Path.GetFileName(filename);
-			}
 		}
 
 		private void InitSpeedCB() //Baud Rates combo box
@@ -178,7 +165,7 @@ namespace LaserGRBL
 			
 			BtnConnectDisconnect.UseAltImage = Core.IsOpen;
 			BtnRunProgram.Enabled = Core.CanSendFile;
-			BtnOpen.Enabled = Core.CanLoadNewFile;
+			
 
 			bool old = TxtManualCommand.Enabled;
 			TxtManualCommand.Enabled = Core.CanSendManualCommand;
@@ -281,15 +268,16 @@ namespace LaserGRBL
 			Core.SuspendHK = false;
 		}
 
-		private void TbFileName_MouseEnter(object sender, EventArgs e)
-		{
-			if (mLoadedFileName != null)
-				TT.Show(mLoadedFileName, TbFileName, 5000);
-		}
+		
 
-		private void TbFileName_MouseLeave(object sender, EventArgs e)
-		{
-			TT.Hide(TbFileName);
-		}
-	}
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PB_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

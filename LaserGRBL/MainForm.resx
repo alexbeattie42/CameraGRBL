@@ -138,7 +138,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="ConnectionForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 402</value>
+    <value>332, 275</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ConnectionForm.TabIndex" type="System.Int32, mscorlib">
@@ -163,10 +163,10 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="JogForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 402</value>
+    <value>0, 275</value>
   </data>
   <data name="JogForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 128</value>
+    <value>332, 128</value>
   </data>
   <data name="JogForm.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -208,7 +208,7 @@
     <value>0, 0</value>
   </data>
   <data name="PreviewForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>642, 530</value>
+    <value>915, 403</value>
   </data>
   <data name="PreviewForm.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -238,10 +238,10 @@
     <value>1</value>
   </data>
   <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>883, 532</value>
+    <value>1255, 405</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>235</value>
+    <value>334</value>
   </data>
   <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -295,7 +295,7 @@
     <value>unknown</value>
   </data>
   <data name="spring1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>441, 19</value>
+    <value>813, 19</value>
   </data>
   <data name="TTOvG0.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -355,13 +355,13 @@
     <value>Disconnected</value>
   </data>
   <data name="StatusBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 556</value>
+    <value>0, 429</value>
   </data>
   <data name="StatusBar.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 19, 0</value>
   </data>
   <data name="StatusBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>883, 24</value>
+    <value>1255, 24</value>
   </data>
   <data name="StatusBar.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1097,7 +1097,7 @@
     <value>0, 0</value>
   </data>
   <data name="MMn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>883, 24</value>
+    <value>1255, 24</value>
   </data>
   <data name="MMn.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1130,7 +1130,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>883, 580</value>
+    <value>1255, 453</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1212,7 +1212,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Laser GRBL</value>
+    <value>Camera GRBL</value>
   </data>
   <data name="&gt;&gt;TTLLines.Name" xml:space="preserve">
     <value>TTLLines</value>
