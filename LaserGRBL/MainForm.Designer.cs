@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.ConnectionForm = new LaserGRBL.ConnectLogForm();
             this.StatusBar = new System.Windows.Forms.StatusStrip();
             this.TTLLines = new System.Windows.Forms.ToolStripStatusLabel();
             this.TTTLines = new System.Windows.Forms.ToolStripStatusLabel();
@@ -54,6 +55,7 @@
             this.MnGrblReset = new System.Windows.Forms.ToolStripMenuItem();
             this.MnGoHome = new System.Windows.Forms.ToolStripMenuItem();
             this.MnUnlock = new System.Windows.Forms.ToolStripMenuItem();
+            this.manualControlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.MnGrblConfig = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -94,11 +96,7 @@
             this.donateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AwakeTimer = new System.Windows.Forms.Timer(this.components);
-            this.ConnectionForm = new LaserGRBL.ConnectLogForm();
-            this.JogForm = new LaserGRBL.JogForm();
-            this.PreviewForm = new LaserGRBL.PreviewForm();
             this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.StatusBar.SuspendLayout();
             this.MMn.SuspendLayout();
@@ -113,12 +111,12 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.ConnectionForm);
-            this.splitContainer1.Panel1.Controls.Add(this.JogForm);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.PreviewForm);
             this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
+            // 
+            // ConnectionForm
+            // 
+            resources.ApplyResources(this.ConnectionForm, "ConnectionForm");
+            this.ConnectionForm.Name = "ConnectionForm";
             // 
             // StatusBar
             // 
@@ -247,6 +245,7 @@
             this.MnGrblReset,
             this.MnGoHome,
             this.MnUnlock,
+            this.manualControlToolStripMenuItem,
             this.toolStripSeparator1,
             this.MnGrblConfig,
             this.settingsToolStripMenuItem,
@@ -291,6 +290,12 @@
             resources.ApplyResources(this.MnUnlock, "MnUnlock");
             this.MnUnlock.Name = "MnUnlock";
             this.MnUnlock.Click += new System.EventHandler(this.MnUnlock_Click);
+            // 
+            // manualControlToolStripMenuItem
+            // 
+            this.manualControlToolStripMenuItem.Name = "manualControlToolStripMenuItem";
+            resources.ApplyResources(this.manualControlToolStripMenuItem, "manualControlToolStripMenuItem");
+            this.manualControlToolStripMenuItem.Click += new System.EventHandler(this.manualControlToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -557,22 +562,6 @@
             this.AwakeTimer.Interval = 20000;
             this.AwakeTimer.Tick += new System.EventHandler(this.AwakeTimer_Tick);
             // 
-            // ConnectionForm
-            // 
-            resources.ApplyResources(this.ConnectionForm, "ConnectionForm");
-            this.ConnectionForm.Name = "ConnectionForm";
-            this.ConnectionForm.Load += new System.EventHandler(this.ConnectionForm_Load);
-            // 
-            // JogForm
-            // 
-            resources.ApplyResources(this.JogForm, "JogForm");
-            this.JogForm.Name = "JogForm";
-            // 
-            // PreviewForm
-            // 
-            resources.ApplyResources(this.PreviewForm, "PreviewForm");
-            this.PreviewForm.Name = "PreviewForm";
-            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -586,7 +575,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFormFormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
             this.StatusBar.ResumeLayout(false);
             this.StatusBar.PerformLayout();
@@ -637,9 +625,9 @@
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
 		private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
 		private System.Windows.Forms.SplitContainer splitContainer1;
-		private PreviewForm PreviewForm;
-		private JogForm JogForm;
+		
 		private ConnectLogForm ConnectionForm;
+        private PreviewForm PreviewForm;
 		private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
 		private System.Windows.Forms.ToolStripMenuItem openSessionLogToolStripMenuItem;
@@ -666,6 +654,7 @@
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
 		private System.Windows.Forms.Timer AwakeTimer;
 		private System.Windows.Forms.ToolStripMenuItem MnStartFromPosition;
-	}
+        private System.Windows.Forms.ToolStripMenuItem manualControlToolStripMenuItem;
+    }
 }
 

@@ -419,9 +419,16 @@ namespace LaserGRBL
 			if (mMessage.ToLower().StartsWith("$") || mMessage.ToLower().StartsWith("~") || mMessage.ToLower().StartsWith("!") || mMessage.ToLower().StartsWith("?") || mMessage.ToLower().StartsWith("ctrl"))
 				mType = MessageType.Config;
 			else if (mMessage.ToLower().StartsWith("grbl"))
-				mType = MessageType.Startup;
+            {
+                mType = MessageType.Startup;
+            }
+				
 			else if (mMessage.ToLower().StartsWith("alarm"))
-				mType = MessageType.Alarm;
+            {
+                mType = MessageType.Alarm;
+                System.Windows.Forms.MessageBox.Show("The machine has encountered an error. Please home and/or reset it.\n View the message log for more details.", "Limit Error");
+            }
+				
 			else if (mMessage.StartsWith("<") && mMessage.EndsWith(">"))
 				mType = MessageType.Position;
 			else if (mMessage.StartsWith("[") && mMessage.EndsWith("]"))

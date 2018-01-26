@@ -29,7 +29,7 @@ namespace LaserGRBL
 		public void SetCore(GrblCore core)
 		{
 			Core = core;
-			Preview.SetComProgram(core);
+			
 
 			RefreshCustomButtons();
 			TimerUpdate();
@@ -37,7 +37,7 @@ namespace LaserGRBL
 
 		public void TimerUpdate()
 		{
-			Preview.TimerUpdate();
+			
 			SuspendLayout();
 			BtnReset.Enabled = Core.CanResetGrbl;
 			BtnHoming.Visible = Core.Configuration.HomingEnabled;
@@ -209,11 +209,7 @@ namespace LaserGRBL
 		}
 
 
-		internal void OnColorChange()
-		{
-			Preview.OnColorChange();
-		}
-
+	
 		private void BtnZeroing_Click(object sender, EventArgs e)
 		{
 			Core.SetNewZero();

@@ -34,7 +34,7 @@ namespace LaserGRBL
 
 			PreviewForm.SetCore(Core);
 			ConnectionForm.SetCore(Core);
-			JogForm.SetCore(Core);
+			//JogForm.SetCore(Core);
 
 			GitHub.NewVersion += GitHub_NewVersion;
 
@@ -58,7 +58,7 @@ namespace LaserGRBL
 			darkToolStripMenuItem.Checked = ColorScheme.CurrentScheme == ColorScheme.Scheme.Dark;
 			hackerToolStripMenuItem.Checked = ColorScheme.CurrentScheme == ColorScheme.Scheme.Hacker;
 			ConnectionForm.OnColorChange();
-			PreviewForm.OnColorChange();
+			
 			RefreshOverride();
 		}
 
@@ -141,7 +141,7 @@ namespace LaserGRBL
 			TimerUpdate();
 			ConnectionForm.TimerUpdate();
 			PreviewForm.TimerUpdate();
-			JogForm.Enabled = Core.JogEnabled;
+			//JogForm.Enabled = Core.JogEnabled;
 		}
 
 		private void TimerUpdate()
@@ -164,6 +164,7 @@ namespace LaserGRBL
 			MnFileSend.Enabled = Core.CanSendFile;
 			MnStartFromPosition.Enabled = Core.CanSendFile;
 			MnGrblConfig.Enabled = true;
+            //manualControlToolStripMenuItem.Enabled = true;
 			//MnExportConfig.Enabled = Core.CanImportExport;
 			//MnImportConfig.Enabled = Core.CanImportExport;
 			MnGrblReset.Enabled = Core.CanResetGrbl;
@@ -176,6 +177,15 @@ namespace LaserGRBL
 			MnGoHome.Visible = Core.Configuration.HomingEnabled;
 			MnGoHome.Enabled = Core.CanDoHoming;
 			MnUnlock.Enabled = Core.CanUnlock;
+            if(Core.MachineStatus == GrblCore.MacStatus.Idle)
+            {
+                manualControlToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                manualControlToolStripMenuItem.Enabled = false;
+            }
+            
 			
 			TTOvG0.Visible = Core.SupportOverride;
 			TTOvG1.Visible = Core.SupportOverride;
@@ -504,9 +514,11 @@ namespace LaserGRBL
 			Core.RunProgramFromPosition();
 		}
 
-        private void ConnectionForm_Load(object sender, EventArgs e)
-        {
+        
 
+        private void manualControlToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            JogForm.CreateAndShowDialog(Core);
         }
     }
 

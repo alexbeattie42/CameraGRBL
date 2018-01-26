@@ -117,41 +117,62 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Preview.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
+  <metadata name="MNAddCB.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>81, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Preview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+  <data name="MNAddCB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 26</value>
   </data>
-  <data name="Preview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>646, 330</value>
+  <data name="&gt;&gt;MNAddCB.Name" xml:space="preserve">
+    <value>MNAddCB</value>
+  </data>
+  <data name="&gt;&gt;MNAddCB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="addCustomButtonToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="addCustomButtonToolStripMenuItem.Text" xml:space="preserve">
+    <value>Add Custom Button</value>
+  </data>
+  <metadata name="TT.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="MNRemEditCB.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>236, 17</value>
+  </metadata>
+  <data name="MNRemEditCB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 48</value>
+  </data>
+  <data name="&gt;&gt;MNRemEditCB.Name" xml:space="preserve">
+    <value>MNRemEditCB</value>
+  </data>
+  <data name="&gt;&gt;MNRemEditCB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RemoveButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 22</value>
+  </data>
+  <data name="RemoveButton.Text" xml:space="preserve">
+    <value>Remove Button</value>
+  </data>
+  <data name="editButtonToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 22</value>
+  </data>
+  <data name="editButtonToolStripMenuItem.Text" xml:space="preserve">
+    <value>Edit Button</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Preview.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Preview.Name" xml:space="preserve">
-    <value>Preview</value>
-  </data>
-  <data name="&gt;&gt;Preview.Type" xml:space="preserve">
-    <value>LaserGRBL.UserControls.GrblPanel, LaserGRBL, Version=2.8.16.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;Preview.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;Preview.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="tableLayoutPanel8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tableLayoutPanel8.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
   <data name="tableLayoutPanel8.ColumnCount" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>5</value>
   </data>
   <data name="BtnReset.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -258,7 +279,7 @@
 </value>
   </data>
   <data name="BtnReset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 2</value>
+    <value>2, 3</value>
   </data>
   <data name="BtnReset.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -275,9 +296,6 @@
   <data name="BtnReset.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <metadata name="TT.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="BtnReset.ToolTip" xml:space="preserve">
     <value>Grbl Reset (ctrl-x)</value>
   </data>
@@ -285,150 +303,13 @@
     <value>BtnReset</value>
   </data>
   <data name="&gt;&gt;BtnReset.Type" xml:space="preserve">
-    <value>LaserGRBL.UserControls.ImageButton, LaserGRBL, Version=2.8.16.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>LaserGRBL.UserControls.ImageButton, CameraGRBL, Version=2.8.36.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnReset.Parent" xml:space="preserve">
     <value>tableLayoutPanel8</value>
   </data>
   <data name="&gt;&gt;BtnReset.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <metadata name="MNAddCB.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>81, 17</value>
-  </metadata>
-  <data name="addCustomButtonToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="addCustomButtonToolStripMenuItem.Text" xml:space="preserve">
-    <value>Add Custom Button</value>
-  </data>
-  <data name="MNAddCB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 26</value>
-  </data>
-  <data name="&gt;&gt;MNAddCB.Name" xml:space="preserve">
-    <value>MNAddCB</value>
-  </data>
-  <data name="&gt;&gt;MNAddCB.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="CustomButtonArea.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="CustomButtonArea.Location" type="System.Drawing.Point, System.Drawing">
-    <value>217, 0</value>
-  </data>
-  <data name="CustomButtonArea.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="CustomButtonArea.Size" type="System.Drawing.Size, System.Drawing">
-    <value>322, 53</value>
-  </data>
-  <data name="CustomButtonArea.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;CustomButtonArea.Name" xml:space="preserve">
-    <value>CustomButtonArea</value>
-  </data>
-  <data name="&gt;&gt;CustomButtonArea.Type" xml:space="preserve">
-    <value>LaserGRBL.PreviewForm+MyFlowPanel, LaserGRBL, Version=2.8.16.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;CustomButtonArea.Parent" xml:space="preserve">
-    <value>tableLayoutPanel8</value>
-  </data>
-  <data name="&gt;&gt;CustomButtonArea.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="BtnUnlock.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="BtnUnlock.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="BtnUnlock.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
-  <data name="BtnUnlock.Location" type="System.Drawing.Point, System.Drawing">
-    <value>108, 2</value>
-  </data>
-  <data name="BtnUnlock.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="BtnUnlock.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>49, 49</value>
-  </data>
-  <data name="BtnUnlock.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>49, 49</value>
-  </data>
-  <data name="BtnUnlock.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 49</value>
-  </data>
-  <data name="BtnUnlock.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="BtnUnlock.ToolTip" xml:space="preserve">
-    <value>Grbl Unlock ($X)</value>
-  </data>
-  <data name="&gt;&gt;BtnUnlock.Name" xml:space="preserve">
-    <value>BtnUnlock</value>
-  </data>
-  <data name="&gt;&gt;BtnUnlock.Type" xml:space="preserve">
-    <value>LaserGRBL.UserControls.ImageButton, LaserGRBL, Version=2.8.16.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;BtnUnlock.Parent" xml:space="preserve">
-    <value>tableLayoutPanel8</value>
-  </data>
-  <data name="&gt;&gt;BtnUnlock.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="BtnHoming.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -516,7 +397,7 @@
 </value>
   </data>
   <data name="BtnHoming.Location" type="System.Drawing.Point, System.Drawing">
-    <value>55, 2</value>
+    <value>55, 3</value>
   </data>
   <data name="BtnHoming.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -540,108 +421,13 @@
     <value>BtnHoming</value>
   </data>
   <data name="&gt;&gt;BtnHoming.Type" xml:space="preserve">
-    <value>LaserGRBL.UserControls.ImageButton, LaserGRBL, Version=2.8.16.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>LaserGRBL.UserControls.ImageButton, CameraGRBL, Version=2.8.36.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnHoming.Parent" xml:space="preserve">
     <value>tableLayoutPanel8</value>
   </data>
   <data name="&gt;&gt;BtnHoming.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="BtnZeroing.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="BtnZeroing.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        D+6wmwVI/gAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="BtnZeroing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>166, 2</value>
-  </data>
-  <data name="BtnZeroing.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="BtnZeroing.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>49, 49</value>
-  </data>
-  <data name="BtnZeroing.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>49, 49</value>
-  </data>
-  <data name="BtnZeroing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 49</value>
-  </data>
-  <data name="BtnZeroing.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="BtnZeroing.ToolTip" xml:space="preserve">
-    <value>Set zero point (G92)</value>
-  </data>
-  <data name="&gt;&gt;BtnZeroing.Name" xml:space="preserve">
-    <value>BtnZeroing</value>
-  </data>
-  <data name="&gt;&gt;BtnZeroing.Type" xml:space="preserve">
-    <value>LaserGRBL.UserControls.ImageButton, LaserGRBL, Version=2.8.16.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;BtnZeroing.Parent" xml:space="preserve">
-    <value>tableLayoutPanel8</value>
-  </data>
-  <data name="&gt;&gt;BtnZeroing.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>1</value>
   </data>
   <data name="BtnResume.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -725,7 +511,7 @@
 </value>
   </data>
   <data name="BtnResume.Location" type="System.Drawing.Point, System.Drawing">
-    <value>546, 2</value>
+    <value>108, 3</value>
   </data>
   <data name="BtnResume.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -749,13 +535,13 @@
     <value>BtnResume</value>
   </data>
   <data name="&gt;&gt;BtnResume.Type" xml:space="preserve">
-    <value>LaserGRBL.UserControls.ImageButton, LaserGRBL, Version=2.8.16.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>LaserGRBL.UserControls.ImageButton, CameraGRBL, Version=2.8.36.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnResume.Parent" xml:space="preserve">
     <value>tableLayoutPanel8</value>
   </data>
   <data name="&gt;&gt;BtnResume.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>2</value>
   </data>
   <data name="BtnStop.AltImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -933,7 +719,7 @@
 </value>
   </data>
   <data name="BtnStop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>599, 2</value>
+    <value>161, 3</value>
   </data>
   <data name="BtnStop.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -957,19 +743,19 @@
     <value>BtnStop</value>
   </data>
   <data name="&gt;&gt;BtnStop.Type" xml:space="preserve">
-    <value>LaserGRBL.UserControls.ImageButton, LaserGRBL, Version=2.8.16.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>LaserGRBL.UserControls.ImageButton, CameraGRBL, Version=2.8.36.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnStop.Parent" xml:space="preserve">
     <value>tableLayoutPanel8</value>
   </data>
   <data name="&gt;&gt;BtnStop.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>3</value>
   </data>
   <data name="tableLayoutPanel8.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="tableLayoutPanel8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 337</value>
+    <value>0, 0</value>
   </data>
   <data name="tableLayoutPanel8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
@@ -978,10 +764,10 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>650, 53</value>
+    <value>230, 55</value>
   </data>
   <data name="tableLayoutPanel8.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel8.Name" xml:space="preserve">
     <value>tableLayoutPanel8</value>
@@ -990,70 +776,13 @@
     <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel8.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel8.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tableLayoutPanel8.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="BtnReset" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="CustomButtonArea" Row="0" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="BtnUnlock" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="BtnHoming" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="BtnZeroing" Row="0" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="BtnResume" Row="0" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="BtnStop" Row="0" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,AutoSize,0,Absolute,5,AutoSize,0,Percent,100,Absolute,5,AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <metadata name="MNRemEditCB.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>236, 17</value>
-  </metadata>
-  <data name="RemoveButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 22</value>
-  </data>
-  <data name="RemoveButton.Text" xml:space="preserve">
-    <value>Remove Button</value>
-  </data>
-  <data name="editButtonToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 22</value>
-  </data>
-  <data name="editButtonToolStripMenuItem.Text" xml:space="preserve">
-    <value>Edit Button</value>
-  </data>
-  <data name="MNRemEditCB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 48</value>
-  </data>
-  <data name="&gt;&gt;MNRemEditCB.Name" xml:space="preserve">
-    <value>MNRemEditCB</value>
-  </data>
-  <data name="&gt;&gt;MNRemEditCB.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>652, 391</value>
-  </data>
-  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanel8" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Preview" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50" /&gt;&lt;Rows Styles="Percent,50,AutoSize,50" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="BtnReset" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="BtnHoming" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="BtnResume" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="BtnStop" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,Absolute,20,Absolute,20" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1065,7 +794,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>652, 391</value>
+    <value>230, 55</value>
   </data>
   <data name="&gt;&gt;addCustomButtonToolStripMenuItem.Name" xml:space="preserve">
     <value>addCustomButtonToolStripMenuItem</value>

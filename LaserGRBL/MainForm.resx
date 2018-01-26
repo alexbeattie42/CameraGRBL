@@ -125,9 +125,6 @@
   <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 24</value>
   </data>
-  <data name="ConnectionForm.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="ConnectionForm.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
@@ -138,50 +135,23 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="ConnectionForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>332, 275</value>
+    <value>247, 268</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ConnectionForm.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;ConnectionForm.Name" xml:space="preserve">
     <value>ConnectionForm</value>
   </data>
   <data name="&gt;&gt;ConnectionForm.Type" xml:space="preserve">
-    <value>LaserGRBL.ConnectLogForm, LaserGRBL, Version=2.8.36.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>LaserGRBL.ConnectLogForm, CameraGRBL, Version=2.8.36.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ConnectionForm.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;ConnectionForm.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="JogForm.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="JogForm.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="JogForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 275</value>
-  </data>
-  <data name="JogForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>332, 128</value>
-  </data>
-  <data name="JogForm.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;JogForm.Name" xml:space="preserve">
-    <value>JogForm</value>
-  </data>
-  <data name="&gt;&gt;JogForm.Type" xml:space="preserve">
-    <value>LaserGRBL.JogForm, LaserGRBL, Version=2.8.36.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;JogForm.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="&gt;&gt;JogForm.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -197,33 +167,6 @@
   </data>
   <data name="splitContainer1.Panel1MinSize" type="System.Int32, mscorlib">
     <value>210</value>
-  </data>
-  <data name="PreviewForm.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="PreviewForm.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="PreviewForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="PreviewForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>915, 403</value>
-  </data>
-  <data name="PreviewForm.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;PreviewForm.Name" xml:space="preserve">
-    <value>PreviewForm</value>
-  </data>
-  <data name="&gt;&gt;PreviewForm.Type" xml:space="preserve">
-    <value>LaserGRBL.PreviewForm, LaserGRBL, Version=2.8.36.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;PreviewForm.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="&gt;&gt;PreviewForm.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -241,7 +184,7 @@
     <value>1255, 405</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>334</value>
+    <value>323</value>
   </data>
   <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -520,6 +463,12 @@
   </data>
   <data name="MnUnlock.Text" xml:space="preserve">
     <value>&amp;Unlock</value>
+  </data>
+  <data name="manualControlToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 22</value>
+  </data>
+  <data name="manualControlToolStripMenuItem.Text" xml:space="preserve">
+    <value>Manual Control</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 6</value>
@@ -1338,6 +1287,12 @@
     <value>MnUnlock</value>
   </data>
   <data name="&gt;&gt;MnUnlock.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;manualControlToolStripMenuItem.Name" xml:space="preserve">
+    <value>manualControlToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;manualControlToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">

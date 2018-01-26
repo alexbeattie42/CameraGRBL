@@ -3,11 +3,25 @@ using System.Windows.Forms;
 
 namespace LaserGRBL
 {
-	public partial class JogForm : System.Windows.Forms.UserControl
+	public partial class JogForm : Form
+
 	{
 		GrblCore Core;
+       
+        public JogForm(GrblCore core)
+        {
+            InitializeComponent();
+            SetCore(core);
 
-		public JogForm()
+           
+        }
+
+        internal static void CreateAndShowDialog(GrblCore core)
+        {
+            using (JogForm sf = new JogForm(core))
+                sf.ShowDialog();
+        }
+        public JogForm()
 		{
 			InitializeComponent();
 		}
