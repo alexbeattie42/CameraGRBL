@@ -77,9 +77,10 @@ namespace LaserGRBL
             this.BtnReset.Coloration = System.Drawing.Color.Empty;
             this.BtnReset.Image = ((System.Drawing.Image)(resources.GetObject("BtnReset.Image")));
             this.BtnReset.Name = "BtnReset";
-            this.BtnReset.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.FixedSize;
+            this.BtnReset.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
             this.TT.SetToolTip(this.BtnReset, resources.GetString("BtnReset.ToolTip"));
             this.BtnReset.UseAltImage = false;
+            this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
             // 
             // BtnStop
             // 
@@ -116,9 +117,10 @@ namespace LaserGRBL
             this.BtnHoming.Coloration = System.Drawing.Color.Empty;
             this.BtnHoming.Image = ((System.Drawing.Image)(resources.GetObject("BtnHoming.Image")));
             this.BtnHoming.Name = "BtnHoming";
-            this.BtnHoming.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.FixedSize;
+            this.BtnHoming.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
             this.TT.SetToolTip(this.BtnHoming, resources.GetString("BtnHoming.ToolTip"));
             this.BtnHoming.UseAltImage = false;
+            this.BtnHoming.Click += new System.EventHandler(this.BtnHoming_Click);
             // 
             // BtnUnlock
             // 
@@ -129,7 +131,7 @@ namespace LaserGRBL
             this.BtnUnlock.Coloration = System.Drawing.Color.Empty;
             this.BtnUnlock.Image = ((System.Drawing.Image)(resources.GetObject("BtnUnlock.Image")));
             this.BtnUnlock.Name = "BtnUnlock";
-            this.BtnUnlock.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.FixedSize;
+            this.BtnUnlock.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
             this.TT.SetToolTip(this.BtnUnlock, resources.GetString("BtnUnlock.ToolTip"));
             this.BtnUnlock.UseAltImage = false;
             this.BtnUnlock.Click += new System.EventHandler(this.BtnUnlock_Click);

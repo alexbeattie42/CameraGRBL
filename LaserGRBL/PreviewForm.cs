@@ -194,6 +194,16 @@ namespace LaserGRBL
         {
             Core.GrblUnlock();
         }
+
+        private void BtnHoming_Click(object sender, EventArgs e)
+        {
+            Core.GrblHoming();
+        }
+
+        private void BtnReset_Click(object sender, EventArgs e)
+        {
+            Core.GrblReset();
+        }
     }
 
 }
