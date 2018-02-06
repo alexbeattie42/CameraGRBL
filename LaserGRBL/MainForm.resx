@@ -169,7 +169,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="ConnectionForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 327</value>
+    <value>270, 430</value>
   </data>
   <data name="ConnectionForm.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>

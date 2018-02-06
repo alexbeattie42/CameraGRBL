@@ -17,12 +17,39 @@ namespace LaserGRBL
         private static CameraInfo selectedItem;
         public static float startDistance = 14;
         public static float betweenDistance = 5;
+        private static int numPlates = 8;
+        private static readonly int MAX_NUM_PLATES = 8;
+
+        
         public CameraControl()
         {
             InitializeComponent();
         }
         private void CameraControl_Load(object sender, EventArgs e)
         {
+            Console.WriteLine("Camera Loaded");
+            CheckBox box;
+            int initialRowCount = m_CameraListTable.RowCount;
+            for (int i = 0; i < 10; i++)
+            {
+                box = new CheckBox();
+                box.Tag = i.ToString();
+                box.Text = (i+1).ToString();
+                box.AutoSize = true;
+
+
+                //box.Location = new Point(10, i * 50); //vertical
+
+
+                //box.Location = new Point(i * 50, 10); //horizontal
+                //m_CameraListTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+                //panel1.Controls.Add(box);
+                flowLayoutPanel1.Controls.Add(box);
+                
+            }
+           // m_CameraListTable.RowCount++;
+            m_CameraListTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            //m_CameraListTable.Controls.Add(new Label() { Text = "Street, City, State" }, 1, m_CameraListTable.RowCount - 3);
             try
             {
                 //Start up Vimba API
@@ -226,6 +253,11 @@ namespace LaserGRBL
             {
                 Console.WriteLine("Could not acquire image. Reason: " + exception.Message);
             }
+        }
+
+        private void m_CameraListTable_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
