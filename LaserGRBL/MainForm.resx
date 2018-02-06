@@ -132,10 +132,13 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="previewForm1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 348</value>
+    <value>0, 437</value>
+  </data>
+  <data name="previewForm1.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>272, 55</value>
   </data>
   <data name="previewForm1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 55</value>
+    <value>272, 55</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="previewForm1.TabIndex" type="System.Int32, mscorlib">
@@ -166,7 +169,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="ConnectionForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 327</value>
+    <value>270, 327</value>
   </data>
   <data name="ConnectionForm.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -196,7 +199,31 @@
     <value>0</value>
   </data>
   <data name="splitContainer1.Panel1MinSize" type="System.Int32, mscorlib">
-    <value>210</value>
+    <value>272</value>
+  </data>
+  <data name="cameraControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="cameraControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="cameraControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>939, 492</value>
+  </data>
+  <data name="cameraControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cameraControl1.Name" xml:space="preserve">
+    <value>cameraControl1</value>
+  </data>
+  <data name="&gt;&gt;cameraControl1.Type" xml:space="preserve">
+    <value>LaserGRBL.CameraControl, CameraGRBL, Version=2.8.36.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cameraControl1.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;cameraControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -211,10 +238,10 @@
     <value>1</value>
   </data>
   <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1255, 405</value>
+    <value>1217, 494</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>280</value>
+    <value>272</value>
   </data>
   <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -268,7 +295,7 @@
     <value>unknown</value>
   </data>
   <data name="spring1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>813, 19</value>
+    <value>775, 19</value>
   </data>
   <data name="TTOvG0.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -328,13 +355,13 @@
     <value>Disconnected</value>
   </data>
   <data name="StatusBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 429</value>
+    <value>0, 518</value>
   </data>
   <data name="StatusBar.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 19, 0</value>
   </data>
   <data name="StatusBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1255, 24</value>
+    <value>1217, 24</value>
   </data>
   <data name="StatusBar.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -498,7 +525,7 @@
     <value>173, 22</value>
   </data>
   <data name="manualControlToolStripMenuItem.Text" xml:space="preserve">
-    <value>Manual Control</value>
+    <value>Calibration</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 6</value>
@@ -1076,7 +1103,7 @@
     <value>0, 0</value>
   </data>
   <data name="MMn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1255, 24</value>
+    <value>1217, 24</value>
   </data>
   <data name="MMn.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1109,7 +1136,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1255, 453</value>
+    <value>1217, 542</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

@@ -97,8 +97,15 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.XML" />
+    <Reference Include="VimbaNET, Version=1.7.0.24184, Culture=neutral, PublicKeyToken=96b729f24f119b9a, processorArchitecture=x86" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CameraControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CameraControl.Designer.cs">
+      <DependentUpon>CameraControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="ColorScheme.cs" />
     <Compile Include="ComWrapper\Emulator.cs" />
     <Compile Include="RunFromPositionForm.cs">
@@ -246,7 +253,7 @@
       <DependentUpon>IssueDetectorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="JogForm.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="JogForm.Designer.cs">
       <DependentUpon>JogForm.cs</DependentUpon>
@@ -414,8 +421,12 @@
     <Compile Include="UserControls\WaitingProgressBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="VimbaHelper.cs" />
     <EmbeddedResource Include="AutoUpdate\NewVersionForm.zh-CN.resx">
       <DependentUpon>NewVersionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CameraControl.resx">
+      <DependentUpon>CameraControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConnectLogForm.da.resx">
       <DependentUpon>ConnectLogForm.cs</DependentUpon>

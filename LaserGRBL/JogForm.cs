@@ -74,9 +74,14 @@ namespace LaserGRBL
 				Settings.Save();
 			}
 		}
-	}
 
-	public class DirectionButton : UserControls.ImageButton
+        private void JogForm_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+
+    public class DirectionButton : UserControls.ImageButton
 	{
 		private GrblCore.JogDirection mDir = GrblCore.JogDirection.N;
 
