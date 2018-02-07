@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.previewForm1 = new LaserGRBL.PreviewForm();
-            this.ConnectionForm = new LaserGRBL.ConnectLogForm();
-            this.cameraControl1 = new LaserGRBL.CameraControl();
             this.StatusBar = new System.Windows.Forms.StatusStrip();
             this.TTLLines = new System.Windows.Forms.ToolStripStatusLabel();
             this.TTTLines = new System.Windows.Forms.ToolStripStatusLabel();
@@ -98,11 +95,16 @@
             this.donateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AwakeTimer = new System.Windows.Forms.Timer(this.components);
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.ConnectionForm = new LaserGRBL.ConnectLogForm();
+            this.previewForm1 = new LaserGRBL.PreviewForm();
+            this.cameraControl1 = new LaserGRBL.CameraControl();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.StatusBar.SuspendLayout();
             this.MMn.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -113,28 +115,12 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.previewForm1);
-            this.splitContainer1.Panel1.Controls.Add(this.ConnectionForm);
+            this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel1);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.cameraControl1);
             this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
-            // 
-            // previewForm1
-            // 
-            resources.ApplyResources(this.previewForm1, "previewForm1");
-            this.previewForm1.Name = "previewForm1";
-            // 
-            // ConnectionForm
-            // 
-            resources.ApplyResources(this.ConnectionForm, "ConnectionForm");
-            this.ConnectionForm.Name = "ConnectionForm";
-            // 
-            // cameraControl1
-            // 
-            resources.ApplyResources(this.cameraControl1, "cameraControl1");
-            this.cameraControl1.Name = "cameraControl1";
             // 
             // StatusBar
             // 
@@ -580,6 +566,30 @@
             this.AwakeTimer.Interval = 20000;
             this.AwakeTimer.Tick += new System.EventHandler(this.AwakeTimer_Tick);
             // 
+            // tableLayoutPanel1
+            // 
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.ConnectionForm, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.previewForm1, 0, 1);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
+            // ConnectionForm
+            // 
+            resources.ApplyResources(this.ConnectionForm, "ConnectionForm");
+            this.ConnectionForm.Name = "ConnectionForm";
+            // 
+            // previewForm1
+            // 
+            resources.ApplyResources(this.previewForm1, "previewForm1");
+            this.previewForm1.Name = "previewForm1";
+            // 
+            // cameraControl1
+            // 
+            resources.ApplyResources(this.cameraControl1, "cameraControl1");
+            this.cameraControl1.Name = "cameraControl1";
+            this.cameraControl1.SelectedItem = null;
+            this.cameraControl1.VimbaHelper = null;
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -599,6 +609,8 @@
             this.StatusBar.PerformLayout();
             this.MMn.ResumeLayout(false);
             this.MMn.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -676,6 +688,7 @@
         private System.Windows.Forms.ToolStripMenuItem manualControlToolStripMenuItem;
         private PreviewForm previewForm1;
         private CameraControl cameraControl1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
 

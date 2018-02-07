@@ -7,73 +7,92 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using SynchronousGrab;
+
 using System.Drawing.Imaging;
 
 namespace LaserGRBL
 {
     public partial class CameraControl : UserControl
     {
-        private static VimbaHelper m_VimbaHelper = null;
-        private static CameraInfo selectedItem;
-        public static float startDistance = 14;
-        public static float betweenDistance = 5;
-        private static int numPlates = 8;
-        private static readonly int MAX_NUM_PLATES = 8;
-
+        public GrblCore Core;
+        private VimbaHelper m_VimbaHelper = null;
+        private CameraInfo selectedItem;
+        public static Decimal startDistance = Properties.Settings.Default.startDistance;
+        public static Decimal betweenDistance = Properties.Settings.Default.betweenDistance;
+     
         
+            
+        private static readonly int MAX_NUM_PLATES = 8;
+        
+        public VimbaHelper VimbaHelper { get => m_VimbaHelper; set => m_VimbaHelper = value; }
+        public  CameraInfo SelectedItem { get => selectedItem; set => selectedItem = value; }
+
         public CameraControl()
         {
             InitializeComponent();
+           
+
         }
         private void CameraControl_Load(object sender, EventArgs e)
         {
+        
             Console.WriteLine("Camera Loaded");
+
+
+            numericUpDown1.Maximum = MAX_NUM_PLATES;
+        numericUpDown1.Value = Properties.Settings.Default.numPlates;
+            checkBox1.Checked = Properties.Settings.Default.addDate;
+            checkBox2.Checked = Properties.Settings.Default.addTime;
+
+
+            textBox1.Text = Properties.Settings.Default.fileLocation;;
+            textBox2.Text = Properties.Settings.Default.fileName;;
+            updateCheckboxs();
+            //m_CameraListTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+           
+            
+        }
+        private void updateCheckboxs()
+        {
             CheckBox box;
-            int initialRowCount = m_CameraListTable.RowCount;
-            for (int i = 0; i < 10; i++)
+            flowLayoutPanel1.Controls.Clear();
+            if (numericUpDown1.Value <= MAX_NUM_PLATES)
             {
-                box = new CheckBox();
-                box.Tag = i.ToString();
-                box.Text = (i+1).ToString();
-                box.AutoSize = true;
-
-
-                //box.Location = new Point(10, i * 50); //vertical
-
-
-                //box.Location = new Point(i * 50, 10); //horizontal
-                //m_CameraListTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-                //panel1.Controls.Add(box);
-                flowLayoutPanel1.Controls.Add(box);
-                
-            }
-           // m_CameraListTable.RowCount++;
-            m_CameraListTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            //m_CameraListTable.Controls.Add(new Label() { Text = "Street, City, State" }, 1, m_CameraListTable.RowCount - 3);
-            try
-            {
-                //Start up Vimba API
-                VimbaHelper vimbaHelper = new VimbaHelper();
-                vimbaHelper.Startup(this.OnCameraListChanged);
-                Text += String.Format(" Vimba .NET API Version {0}", vimbaHelper.GetVersion());
-                m_VimbaHelper = vimbaHelper;
-
-                try
+                for (int i = 0; i < numericUpDown1.Value; i++)
                 {
-                    UpdateCameraList();
-                }
-                catch (Exception exception)
-                {
-                    LogError("Could not update camera list. Reason: " + exception.Message);
+                    box = new CheckBox();
+                    box.Tag = i.ToString();
+                    box.Text = (i + 1).ToString();
+                    box.AutoSize = true;
+                    box.Checked = true;
+                    flowLayoutPanel1.Controls.Add(box);
+
+
                 }
             }
-            catch (Exception exception)
+            else
             {
-                LogError("Could not startup Vimba API. Reason: " + exception.Message);
+                LogError("Number of plates exceeds maximum value");
             }
         }
+        public void SetCore(GrblCore core)
+        {
+            Core = core;
+            Core.MachineStatusChanged += OnMachineStatus;
+        }
+        void OnMachineStatus()
+        {
+            LogMessage("Machine Status Changed");
+            if (Core.MachineStatus == GrblCore.MacStatus.Idle)
+            {
+                
+                LogMessage("Status Idle");
+                Console.WriteLine("StatusIdle");
+            }
+
+        }
         //Add log message to logging list box
-        private void LogMessage(string message)
+        public void LogMessage(string message)
         {
             if (null == message)
             {
@@ -85,20 +104,20 @@ namespace LaserGRBL
         }
 
         //Add an error log message and show an error message box
-        private void LogError(string message)
+        public void LogError(string message)
         {
             LogMessage(message);
 
             MessageBox.Show(message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        private void UpdateCameraList()
+        public void UpdateCameraList()
         {
             //Remember the old selection (if there was any)y
             CameraInfo oldSelectedItem = m_CameraList.SelectedItem as CameraInfo;
             m_CameraList.Items.Clear();
 
-            List<CameraInfo> cameras = m_VimbaHelper.CameraList;
+            List<CameraInfo> cameras = VimbaHelper.CameraList;
 
             CameraInfo newSelectedItem = null;
             foreach (CameraInfo cameraInfo in cameras)
@@ -128,7 +147,7 @@ namespace LaserGRBL
             }
         }
 
-        private void OnCameraListChanged(object sender, EventArgs args)
+        public void OnCameraListChanged(object sender, EventArgs args)
         {
             //Start an async invoke in case this method was not
             //called by the GUI thread.
@@ -138,7 +157,7 @@ namespace LaserGRBL
                 return;
             }
 
-            if (null != m_VimbaHelper)
+            if (null != VimbaHelper)
             {
                 try
                 {
@@ -165,7 +184,7 @@ namespace LaserGRBL
 
                 //Acquire an image synchronously (snap) from selected camera
 
-                Image image = m_VimbaHelper.AcquireSingleImage(selectedItem.ID);
+                Image image = VimbaHelper.AcquireSingleImage(selectedItem.ID);
 
                 //Display image
                 m_PictureBox.Image = image;
@@ -215,10 +234,10 @@ namespace LaserGRBL
             {
                 //Enable button if a camera is selected
                 m_AcquireButton.Enabled = true;
-                selectedItem = cameraInfo;
+                SelectedItem = cameraInfo;
             }
         }
-        public static void CapSaveImage()
+        public void CapSaveImage()
         {
             //string currentDate = DateTime.Now.ToString("h:mm:ss");
 
@@ -227,13 +246,13 @@ namespace LaserGRBL
                 //Determine selected camera
 
 
-                if (null == selectedItem)
+                if (null == SelectedItem)
                 {
                     throw new NullReferenceException("No camera selected.");
                 }
 
                 //Acquire an image synchronously (snap) from selected camera
-                Image image = m_VimbaHelper.AcquireSingleImage(selectedItem.ID);
+                Image image = VimbaHelper.AcquireSingleImage(SelectedItem.ID);
 
                 //Display image
                 //m_PictureBox.Image = image;
@@ -243,21 +262,64 @@ namespace LaserGRBL
                 Console.WriteLine();
                 Console.WriteLine(fileName);
                 image.Save(fileName, ImageFormat.Png);
-                //LogError("Image acquired synchonously.");
+                LogMessage("Image acquired synchonously.");
 
                 // System.Threading.Thread.Sleep(200);
-                // usrSerial.WriteLine("D");
+                
 
             }
             catch (Exception exception)
             {
-                Console.WriteLine("Could not acquire image. Reason: " + exception.Message);
+                LogError("Could not acquire image. Reason: " + exception.Message);
             }
         }
 
         private void m_CameraListTable_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        public GrblCommand firstMove = new GrblCommand(string.Format("G91 Y13 F4000 "));
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Core.EnqueueCommand(firstMove);
+           // CapSaveImage();
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            
+            
+            Properties.Settings.Default.numPlates = numericUpDown1.Value;
+            Properties.Settings.Default.Save();
+            updateCheckboxs();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                textBox1.Text = folderBrowserDialog1.SelectedPath;
+                Properties.Settings.Default.fileLocation = folderBrowserDialog1.SelectedPath;
+                Properties.Settings.Default.Save();
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.fileName = textBox2.Text;
+            Properties.Settings.Default.Save();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.addDate = checkBox1.Checked;
+            Properties.Settings.Default.Save();
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.addTime = checkBox2.Checked;
+            Properties.Settings.Default.Save();
         }
     }
 }

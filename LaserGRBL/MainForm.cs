@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SynchronousGrab;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -8,8 +9,10 @@ namespace LaserGRBL
 	{
 		private GrblCore Core;
 		private bool FirstIdle = true;
+        private static VimbaHelper m_VimbaHelper = null;
 
-		public MainForm()
+
+        public MainForm()
 		{
 			InitializeComponent();
 
@@ -34,9 +37,11 @@ namespace LaserGRBL
 
             previewForm1.SetCore(Core);
 			ConnectionForm.SetCore(Core);
-			//JogForm.SetCore(Core);
+            cameraControl1.SetCore(Core);
+            
+            //JogForm.SetCore(Core);
 
-			GitHub.NewVersion += GitHub_NewVersion;
+            GitHub.NewVersion += GitHub_NewVersion;
 
 			ColorScheme.CurrentScheme = (ColorScheme.Scheme)Settings.GetObject("Color Schema", ColorScheme.Scheme.BlueLaser); ;
 			RefreshColorSchema(); //include RefreshOverride();
@@ -86,9 +91,59 @@ namespace LaserGRBL
 			if (state == FormWindowState.Normal)
 			{ WindowState = state; Size = (Size)msp[0]; Location = (Point)msp[1]; }
 			ResumeLayout();
-		}
+            try
+            {
+                //Start up Vimba API
+                VimbaHelper vimbaHelper = new VimbaHelper();
+                vimbaHelper.Startup(cameraControl1.OnCameraListChanged);
+                Text += String.Format(" Vimba .NET API Version {0}", vimbaHelper.GetVersion());
+                m_VimbaHelper = vimbaHelper;
+                cameraControl1.VimbaHelper = m_VimbaHelper;
 
-		void OnFileLoaded(long elapsed, string filename)
+
+                try
+                {
+                    cameraControl1.UpdateCameraList();
+                }
+                catch (Exception exception)
+                {
+                    cameraControl1.LogError("Could not update camera list. Reason: " + exception.Message);
+                }
+            }
+            catch (Exception exception)
+            {
+                cameraControl1.LogError("Could not startup Vimba API. Reason: " + exception.Message);
+            }
+        }
+        void MainFormFormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Core.InProgram && System.Windows.Forms.MessageBox.Show(Strings.ExitAnyway, "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) != System.Windows.Forms.DialogResult.Yes)
+                e.Cancel = true;
+            if (null != m_VimbaHelper)
+            {
+                try
+                {
+                    //Shutdown Vimba API when application exits
+                    m_VimbaHelper.Shutdown();
+
+                    m_VimbaHelper = null;
+                }
+                catch (Exception exception)
+                {
+                    cameraControl1.LogError("Could not shutdown Vimba API. Reason: " + exception.Message);
+                }
+            }
+            if (!e.Cancel)
+            {
+                Core.CloseCom(true);
+                Settings.SetObject("Mainform Size and Position", new object[] { Size, Location, WindowState });
+                Settings.Save();
+
+                UsageStats.SaveFile(Core);
+            }
+        }
+
+        void OnFileLoaded(long elapsed, string filename)
 		{
 			if (InvokeRequired)
 			{
@@ -120,20 +175,7 @@ namespace LaserGRBL
 
 			TimerUpdate();
 		}
-		void MainFormFormClosing(object sender, FormClosingEventArgs e)
-		{
-			if (Core.InProgram && System.Windows.Forms.MessageBox.Show(Strings.ExitAnyway, "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) != System.Windows.Forms.DialogResult.Yes)
-				e.Cancel = true;
-
-			if (!e.Cancel)
-			{
-				Core.CloseCom(true);
-				Settings.SetObject("Mainform Size and Position", new object[] { Size, Location, WindowState });
-				Settings.Save();
-				
-				UsageStats.SaveFile(Core);
-			}
-		}
+		
 		
 
 		private void UpdateTimer_Tick(object sender, EventArgs e)

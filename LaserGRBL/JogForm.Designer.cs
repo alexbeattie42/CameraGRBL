@@ -31,6 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JogForm));
             this.tlp = new System.Windows.Forms.TableLayoutPanel();
+            this.BtnHome = new LaserGRBL.DirectionButton();
+            this.imageButton1 = new LaserGRBL.DirectionButton();
+            this.imageButton2 = new LaserGRBL.DirectionButton();
+            this.imageButton4 = new LaserGRBL.DirectionButton();
+            this.imageButton6 = new LaserGRBL.DirectionButton();
+            this.imageButton5 = new LaserGRBL.DirectionButton();
+            this.imageButton8 = new LaserGRBL.DirectionButton();
+            this.imageButton7 = new LaserGRBL.DirectionButton();
+            this.imageButton3 = new LaserGRBL.DirectionButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.TbSpeed = new System.Windows.Forms.TrackBar();
             this.LblSpeed = new System.Windows.Forms.Label();
@@ -44,15 +53,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.BtnHome = new LaserGRBL.DirectionButton();
-            this.imageButton1 = new LaserGRBL.DirectionButton();
-            this.imageButton2 = new LaserGRBL.DirectionButton();
-            this.imageButton4 = new LaserGRBL.DirectionButton();
-            this.imageButton6 = new LaserGRBL.DirectionButton();
-            this.imageButton5 = new LaserGRBL.DirectionButton();
-            this.imageButton8 = new LaserGRBL.DirectionButton();
-            this.imageButton7 = new LaserGRBL.DirectionButton();
-            this.imageButton3 = new LaserGRBL.DirectionButton();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.tlp.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TbSpeed)).BeginInit();
@@ -96,8 +98,161 @@
             this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlp.Size = new System.Drawing.Size(297, 136);
+            this.tlp.Size = new System.Drawing.Size(288, 136);
             this.tlp.TabIndex = 0;
+            // 
+            // BtnHome
+            // 
+            this.BtnHome.AltImage = null;
+            this.BtnHome.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BtnHome.Coloration = System.Drawing.Color.Empty;
+            this.BtnHome.Image = ((System.Drawing.Image)(resources.GetObject("BtnHome.Image")));
+            this.BtnHome.JogDirection = LaserGRBL.GrblCore.JogDirection.N;
+            this.BtnHome.Location = new System.Drawing.Point(127, 50);
+            this.BtnHome.MaximumSize = new System.Drawing.Size(48, 48);
+            this.BtnHome.Name = "BtnHome";
+            this.BtnHome.Size = new System.Drawing.Size(33, 33);
+            this.BtnHome.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
+            this.BtnHome.TabIndex = 7;
+            this.BtnHome.UseAltImage = false;
+            this.BtnHome.Click += new System.EventHandler(this.BtnHome_Click);
+            // 
+            // imageButton1
+            // 
+            this.imageButton1.AltImage = null;
+            this.imageButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.imageButton1.Coloration = System.Drawing.Color.Empty;
+            this.imageButton1.Image = ((System.Drawing.Image)(resources.GetObject("imageButton1.Image")));
+            this.imageButton1.JogDirection = LaserGRBL.GrblCore.JogDirection.W;
+            this.imageButton1.Location = new System.Drawing.Point(86, 50);
+            this.imageButton1.MaximumSize = new System.Drawing.Size(48, 48);
+            this.imageButton1.Name = "imageButton1";
+            this.imageButton1.Size = new System.Drawing.Size(33, 33);
+            this.imageButton1.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
+            this.imageButton1.TabIndex = 8;
+            this.imageButton1.UseAltImage = false;
+            this.imageButton1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnJogButtonMouseDown);
+            // 
+            // imageButton2
+            // 
+            this.imageButton2.AltImage = null;
+            this.imageButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imageButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.imageButton2.Coloration = System.Drawing.Color.Empty;
+            this.imageButton2.Image = ((System.Drawing.Image)(resources.GetObject("imageButton2.Image")));
+            this.imageButton2.JogDirection = LaserGRBL.GrblCore.JogDirection.N;
+            this.imageButton2.Location = new System.Drawing.Point(127, 11);
+            this.imageButton2.MaximumSize = new System.Drawing.Size(48, 48);
+            this.imageButton2.Name = "imageButton2";
+            this.imageButton2.Size = new System.Drawing.Size(33, 33);
+            this.imageButton2.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
+            this.imageButton2.TabIndex = 9;
+            this.imageButton2.UseAltImage = false;
+            this.imageButton2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnJogButtonMouseDown);
+            // 
+            // imageButton4
+            // 
+            this.imageButton4.AltImage = null;
+            this.imageButton4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imageButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.imageButton4.Coloration = System.Drawing.Color.Empty;
+            this.imageButton4.Image = ((System.Drawing.Image)(resources.GetObject("imageButton4.Image")));
+            this.imageButton4.JogDirection = LaserGRBL.GrblCore.JogDirection.E;
+            this.imageButton4.Location = new System.Drawing.Point(168, 50);
+            this.imageButton4.MaximumSize = new System.Drawing.Size(48, 48);
+            this.imageButton4.Name = "imageButton4";
+            this.imageButton4.Size = new System.Drawing.Size(33, 33);
+            this.imageButton4.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
+            this.imageButton4.TabIndex = 11;
+            this.imageButton4.UseAltImage = false;
+            this.imageButton4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnJogButtonMouseDown);
+            // 
+            // imageButton6
+            // 
+            this.imageButton6.AltImage = null;
+            this.imageButton6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imageButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.imageButton6.Coloration = System.Drawing.Color.Empty;
+            this.imageButton6.Image = ((System.Drawing.Image)(resources.GetObject("imageButton6.Image")));
+            this.imageButton6.JogDirection = LaserGRBL.GrblCore.JogDirection.NW;
+            this.imageButton6.Location = new System.Drawing.Point(86, 11);
+            this.imageButton6.MaximumSize = new System.Drawing.Size(48, 48);
+            this.imageButton6.Name = "imageButton6";
+            this.imageButton6.Size = new System.Drawing.Size(33, 33);
+            this.imageButton6.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
+            this.imageButton6.TabIndex = 13;
+            this.imageButton6.UseAltImage = false;
+            this.imageButton6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnJogButtonMouseDown);
+            // 
+            // imageButton5
+            // 
+            this.imageButton5.AltImage = null;
+            this.imageButton5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imageButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.imageButton5.Coloration = System.Drawing.Color.Empty;
+            this.imageButton5.Image = ((System.Drawing.Image)(resources.GetObject("imageButton5.Image")));
+            this.imageButton5.JogDirection = LaserGRBL.GrblCore.JogDirection.NE;
+            this.imageButton5.Location = new System.Drawing.Point(168, 11);
+            this.imageButton5.MaximumSize = new System.Drawing.Size(48, 48);
+            this.imageButton5.Name = "imageButton5";
+            this.imageButton5.Size = new System.Drawing.Size(33, 33);
+            this.imageButton5.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
+            this.imageButton5.TabIndex = 12;
+            this.imageButton5.UseAltImage = false;
+            this.imageButton5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnJogButtonMouseDown);
+            // 
+            // imageButton8
+            // 
+            this.imageButton8.AltImage = null;
+            this.imageButton8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imageButton8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.imageButton8.Coloration = System.Drawing.Color.Empty;
+            this.imageButton8.Image = ((System.Drawing.Image)(resources.GetObject("imageButton8.Image")));
+            this.imageButton8.JogDirection = LaserGRBL.GrblCore.JogDirection.S;
+            this.imageButton8.Location = new System.Drawing.Point(126, 89);
+            this.imageButton8.MaximumSize = new System.Drawing.Size(48, 48);
+            this.imageButton8.Name = "imageButton8";
+            this.imageButton8.Size = new System.Drawing.Size(35, 35);
+            this.imageButton8.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
+            this.imageButton8.TabIndex = 15;
+            this.imageButton8.UseAltImage = false;
+            this.imageButton8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnJogButtonMouseDown);
+            // 
+            // imageButton7
+            // 
+            this.imageButton7.AltImage = null;
+            this.imageButton7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imageButton7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.imageButton7.Coloration = System.Drawing.Color.Empty;
+            this.imageButton7.Image = ((System.Drawing.Image)(resources.GetObject("imageButton7.Image")));
+            this.imageButton7.JogDirection = LaserGRBL.GrblCore.JogDirection.SW;
+            this.imageButton7.Location = new System.Drawing.Point(85, 89);
+            this.imageButton7.MaximumSize = new System.Drawing.Size(48, 48);
+            this.imageButton7.Name = "imageButton7";
+            this.imageButton7.Size = new System.Drawing.Size(35, 35);
+            this.imageButton7.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
+            this.imageButton7.TabIndex = 14;
+            this.imageButton7.UseAltImage = false;
+            this.imageButton7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnJogButtonMouseDown);
+            // 
+            // imageButton3
+            // 
+            this.imageButton3.AltImage = null;
+            this.imageButton3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imageButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.imageButton3.Coloration = System.Drawing.Color.Empty;
+            this.imageButton3.Image = ((System.Drawing.Image)(resources.GetObject("imageButton3.Image")));
+            this.imageButton3.JogDirection = LaserGRBL.GrblCore.JogDirection.SE;
+            this.imageButton3.Location = new System.Drawing.Point(167, 89);
+            this.imageButton3.MaximumSize = new System.Drawing.Size(48, 48);
+            this.imageButton3.Name = "imageButton3";
+            this.imageButton3.Size = new System.Drawing.Size(35, 35);
+            this.imageButton3.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
+            this.imageButton3.TabIndex = 10;
+            this.imageButton3.UseAltImage = false;
+            this.imageButton3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnJogButtonMouseDown);
             // 
             // tableLayoutPanel1
             // 
@@ -108,7 +263,7 @@
             this.tableLayoutPanel1.Controls.Add(this.TbSpeed, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.LblSpeed, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(36, 8);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(31, 8);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -155,7 +310,7 @@
             this.tableLayoutPanel2.Controls.Add(this.TbStep, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.LblStep, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(210, 8);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(205, 8);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
@@ -206,8 +361,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel3);
-            this.splitContainer1.Size = new System.Drawing.Size(575, 136);
-            this.splitContainer1.SplitterDistance = 297;
+            this.splitContainer1.Size = new System.Drawing.Size(558, 136);
+            this.splitContainer1.SplitterDistance = 288;
             this.splitContainer1.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -219,22 +374,25 @@
             this.tableLayoutPanel3.Controls.Add(this.label2, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.numericUpDown1, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.numericUpDown2, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.button1, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.button2, 1, 2);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(274, 80);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(266, 98);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label1.Location = new System.Drawing.Point(3, 27);
+            this.label1.Location = new System.Drawing.Point(3, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 13);
+            this.label1.Size = new System.Drawing.Size(127, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Distance to First Plate";
             // 
@@ -242,184 +400,51 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label2.Location = new System.Drawing.Point(140, 27);
+            this.label2.Location = new System.Drawing.Point(136, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 13);
+            this.label2.Size = new System.Drawing.Size(127, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Distance Between Plates";
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(3, 43);
+            this.numericUpDown1.Location = new System.Drawing.Point(3, 37);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown1.TabIndex = 4;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(140, 43);
+            this.numericUpDown2.Location = new System.Drawing.Point(136, 37);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown2.TabIndex = 5;
+            this.numericUpDown2.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
             // 
-            // BtnHome
+            // button1
             // 
-            this.BtnHome.AltImage = null;
-            this.BtnHome.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.BtnHome.Coloration = System.Drawing.Color.Empty;
-            this.BtnHome.Image = ((System.Drawing.Image)(resources.GetObject("BtnHome.Image")));
-            this.BtnHome.JogDirection = LaserGRBL.GrblCore.JogDirection.N;
-            this.BtnHome.Location = new System.Drawing.Point(132, 50);
-            this.BtnHome.MaximumSize = new System.Drawing.Size(48, 48);
-            this.BtnHome.Name = "BtnHome";
-            this.BtnHome.Size = new System.Drawing.Size(33, 33);
-            this.BtnHome.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
-            this.BtnHome.TabIndex = 7;
-            this.BtnHome.UseAltImage = false;
-            this.BtnHome.Click += new System.EventHandler(this.BtnHome_Click);
+            this.button1.Location = new System.Drawing.Point(3, 71);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Check";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // imageButton1
+            // button2
             // 
-            this.imageButton1.AltImage = null;
-            this.imageButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.imageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.imageButton1.Coloration = System.Drawing.Color.Empty;
-            this.imageButton1.Image = ((System.Drawing.Image)(resources.GetObject("imageButton1.Image")));
-            this.imageButton1.JogDirection = LaserGRBL.GrblCore.JogDirection.W;
-            this.imageButton1.Location = new System.Drawing.Point(91, 50);
-            this.imageButton1.MaximumSize = new System.Drawing.Size(48, 48);
-            this.imageButton1.Name = "imageButton1";
-            this.imageButton1.Size = new System.Drawing.Size(33, 33);
-            this.imageButton1.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
-            this.imageButton1.TabIndex = 8;
-            this.imageButton1.UseAltImage = false;
-            this.imageButton1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnJogButtonMouseDown);
-            // 
-            // imageButton2
-            // 
-            this.imageButton2.AltImage = null;
-            this.imageButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.imageButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.imageButton2.Coloration = System.Drawing.Color.Empty;
-            this.imageButton2.Image = ((System.Drawing.Image)(resources.GetObject("imageButton2.Image")));
-            this.imageButton2.JogDirection = LaserGRBL.GrblCore.JogDirection.N;
-            this.imageButton2.Location = new System.Drawing.Point(132, 11);
-            this.imageButton2.MaximumSize = new System.Drawing.Size(48, 48);
-            this.imageButton2.Name = "imageButton2";
-            this.imageButton2.Size = new System.Drawing.Size(33, 33);
-            this.imageButton2.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
-            this.imageButton2.TabIndex = 9;
-            this.imageButton2.UseAltImage = false;
-            this.imageButton2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnJogButtonMouseDown);
-            // 
-            // imageButton4
-            // 
-            this.imageButton4.AltImage = null;
-            this.imageButton4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.imageButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.imageButton4.Coloration = System.Drawing.Color.Empty;
-            this.imageButton4.Image = ((System.Drawing.Image)(resources.GetObject("imageButton4.Image")));
-            this.imageButton4.JogDirection = LaserGRBL.GrblCore.JogDirection.E;
-            this.imageButton4.Location = new System.Drawing.Point(173, 50);
-            this.imageButton4.MaximumSize = new System.Drawing.Size(48, 48);
-            this.imageButton4.Name = "imageButton4";
-            this.imageButton4.Size = new System.Drawing.Size(33, 33);
-            this.imageButton4.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
-            this.imageButton4.TabIndex = 11;
-            this.imageButton4.UseAltImage = false;
-            this.imageButton4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnJogButtonMouseDown);
-            // 
-            // imageButton6
-            // 
-            this.imageButton6.AltImage = null;
-            this.imageButton6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.imageButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.imageButton6.Coloration = System.Drawing.Color.Empty;
-            this.imageButton6.Image = ((System.Drawing.Image)(resources.GetObject("imageButton6.Image")));
-            this.imageButton6.JogDirection = LaserGRBL.GrblCore.JogDirection.NW;
-            this.imageButton6.Location = new System.Drawing.Point(91, 11);
-            this.imageButton6.MaximumSize = new System.Drawing.Size(48, 48);
-            this.imageButton6.Name = "imageButton6";
-            this.imageButton6.Size = new System.Drawing.Size(33, 33);
-            this.imageButton6.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
-            this.imageButton6.TabIndex = 13;
-            this.imageButton6.UseAltImage = false;
-            this.imageButton6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnJogButtonMouseDown);
-            // 
-            // imageButton5
-            // 
-            this.imageButton5.AltImage = null;
-            this.imageButton5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.imageButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.imageButton5.Coloration = System.Drawing.Color.Empty;
-            this.imageButton5.Image = ((System.Drawing.Image)(resources.GetObject("imageButton5.Image")));
-            this.imageButton5.JogDirection = LaserGRBL.GrblCore.JogDirection.NE;
-            this.imageButton5.Location = new System.Drawing.Point(173, 11);
-            this.imageButton5.MaximumSize = new System.Drawing.Size(48, 48);
-            this.imageButton5.Name = "imageButton5";
-            this.imageButton5.Size = new System.Drawing.Size(33, 33);
-            this.imageButton5.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
-            this.imageButton5.TabIndex = 12;
-            this.imageButton5.UseAltImage = false;
-            this.imageButton5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnJogButtonMouseDown);
-            // 
-            // imageButton8
-            // 
-            this.imageButton8.AltImage = null;
-            this.imageButton8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.imageButton8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.imageButton8.Coloration = System.Drawing.Color.Empty;
-            this.imageButton8.Image = ((System.Drawing.Image)(resources.GetObject("imageButton8.Image")));
-            this.imageButton8.JogDirection = LaserGRBL.GrblCore.JogDirection.S;
-            this.imageButton8.Location = new System.Drawing.Point(131, 89);
-            this.imageButton8.MaximumSize = new System.Drawing.Size(48, 48);
-            this.imageButton8.Name = "imageButton8";
-            this.imageButton8.Size = new System.Drawing.Size(35, 35);
-            this.imageButton8.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
-            this.imageButton8.TabIndex = 15;
-            this.imageButton8.UseAltImage = false;
-            this.imageButton8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnJogButtonMouseDown);
-            // 
-            // imageButton7
-            // 
-            this.imageButton7.AltImage = null;
-            this.imageButton7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.imageButton7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.imageButton7.Coloration = System.Drawing.Color.Empty;
-            this.imageButton7.Image = ((System.Drawing.Image)(resources.GetObject("imageButton7.Image")));
-            this.imageButton7.JogDirection = LaserGRBL.GrblCore.JogDirection.SW;
-            this.imageButton7.Location = new System.Drawing.Point(90, 89);
-            this.imageButton7.MaximumSize = new System.Drawing.Size(48, 48);
-            this.imageButton7.Name = "imageButton7";
-            this.imageButton7.Size = new System.Drawing.Size(35, 35);
-            this.imageButton7.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
-            this.imageButton7.TabIndex = 14;
-            this.imageButton7.UseAltImage = false;
-            this.imageButton7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnJogButtonMouseDown);
-            // 
-            // imageButton3
-            // 
-            this.imageButton3.AltImage = null;
-            this.imageButton3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.imageButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.imageButton3.Coloration = System.Drawing.Color.Empty;
-            this.imageButton3.Image = ((System.Drawing.Image)(resources.GetObject("imageButton3.Image")));
-            this.imageButton3.JogDirection = LaserGRBL.GrblCore.JogDirection.SE;
-            this.imageButton3.Location = new System.Drawing.Point(172, 89);
-            this.imageButton3.MaximumSize = new System.Drawing.Size(48, 48);
-            this.imageButton3.Name = "imageButton3";
-            this.imageButton3.Size = new System.Drawing.Size(35, 35);
-            this.imageButton3.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
-            this.imageButton3.TabIndex = 10;
-            this.imageButton3.UseAltImage = false;
-            this.imageButton3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnJogButtonMouseDown);
+            this.button2.Location = new System.Drawing.Point(136, 71);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Check";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // JogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(575, 136);
+            this.ClientSize = new System.Drawing.Size(558, 136);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MinimumSize = new System.Drawing.Size(500, 175);
@@ -470,5 +495,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

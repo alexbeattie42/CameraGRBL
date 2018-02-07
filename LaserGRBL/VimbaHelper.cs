@@ -295,7 +295,7 @@ namespace SynchronousGrab
         /// </summary>
         private void ReleaseVimba()
         {
-            if(null != m_Vimba)
+            if(m_Vimba != null)
             {
                 //We can use cascaded try-finally blocks to release the
                 //Vimba API step by step to make sure that every step is executed.
@@ -367,8 +367,11 @@ namespace SynchronousGrab
             {
                 throw new Exception("Vimba has not been started.");
             }
+          
+                ReleaseVimba();
+           
 
-            ReleaseVimba();
+            
         }
 
         /// <summary>

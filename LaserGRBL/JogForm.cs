@@ -12,6 +12,8 @@ namespace LaserGRBL
         {
             InitializeComponent();
             SetCore(core);
+            numericUpDown1.Value = Properties.Settings.Default.startDistance;
+            numericUpDown2.Value = Properties.Settings.Default.betweenDistance;
 
            
         }
@@ -78,6 +80,19 @@ namespace LaserGRBL
         private void JogForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.startDistance = numericUpDown1.Value;
+            Properties.Settings.Default.Save();
+
+        }
+
+        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.betweenDistance = numericUpDown2.Value;
+            Properties.Settings.Default.Save();
         }
     }
 
