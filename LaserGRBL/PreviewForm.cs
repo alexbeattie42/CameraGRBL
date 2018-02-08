@@ -40,11 +40,12 @@ namespace LaserGRBL
 			
 			SuspendLayout();
 			BtnReset.Enabled = Core.CanResetGrbl;
-			BtnHoming.Visible = Core.Configuration.HomingEnabled;
+			//BtnHoming.Visible = Core.Configuration.HomingEnabled;
 			BtnHoming.Enabled = Core.CanDoHoming;
 			BtnUnlock.Enabled = Core.CanUnlock;
 			BtnStop.Enabled = Core.CanFeedHold;
-			BtnResume.Enabled = Core.CanResumeHold;
+            //BtnResume.Enabled = Core.CanResumeHold;
+      
 			//BtnZeroing.Enabled = Core.CanDoZeroing;
 
 			
@@ -60,15 +61,7 @@ namespace LaserGRBL
 		{
 			Core.GrblReset();
 		}
-		void BtnStopClick(object sender, EventArgs e)
-		{
-			Core.FeedHold();
-		}
-		void BtnResumeClick(object sender, EventArgs e)
-		{
-			Core.CycleStartResume();
-		}
-
+	
 		private void BtnUnlockClick(object sender, EventArgs e)
 		{
 			Core.GrblUnlock();
@@ -203,6 +196,11 @@ namespace LaserGRBL
         private void BtnReset_Click(object sender, EventArgs e)
         {
             Core.GrblReset();
+        }
+
+        private void BtnStop_Click(object sender, EventArgs e)
+        {
+            CameraControl.runningCycle = false;
         }
     }
 

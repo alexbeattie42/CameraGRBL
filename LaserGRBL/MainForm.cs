@@ -562,6 +562,11 @@ namespace LaserGRBL
         {
             JogForm.CreateAndShowDialog(Core);
         }
+
+        private void cameraControl1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

@@ -41,15 +41,15 @@ namespace LaserGRBL
             this.MNAddCB = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addCustomButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TT = new System.Windows.Forms.ToolTip(this.components);
+            this.MNRemEditCB = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.RemoveButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.editButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.BtnReset = new LaserGRBL.UserControls.ImageButton();
             this.BtnStop = new LaserGRBL.UserControls.ImageButton();
             this.BtnResume = new LaserGRBL.UserControls.ImageButton();
             this.BtnHoming = new LaserGRBL.UserControls.ImageButton();
             this.BtnUnlock = new LaserGRBL.UserControls.ImageButton();
-            this.MNRemEditCB = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.RemoveButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.editButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.MNAddCB.SuspendLayout();
             this.MNRemEditCB.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
@@ -67,74 +67,6 @@ namespace LaserGRBL
             this.addCustomButtonToolStripMenuItem.Name = "addCustomButtonToolStripMenuItem";
             resources.ApplyResources(this.addCustomButtonToolStripMenuItem, "addCustomButtonToolStripMenuItem");
             this.addCustomButtonToolStripMenuItem.Click += new System.EventHandler(this.addCustomButtonToolStripMenuItem_Click);
-            // 
-            // BtnReset
-            // 
-            this.BtnReset.AltImage = null;
-            resources.ApplyResources(this.BtnReset, "BtnReset");
-            this.BtnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.BtnReset.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BtnReset.Coloration = System.Drawing.Color.Empty;
-            this.BtnReset.Image = ((System.Drawing.Image)(resources.GetObject("BtnReset.Image")));
-            this.BtnReset.Name = "BtnReset";
-            this.BtnReset.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
-            this.TT.SetToolTip(this.BtnReset, resources.GetString("BtnReset.ToolTip"));
-            this.BtnReset.UseAltImage = false;
-            this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
-            // 
-            // BtnStop
-            // 
-            this.BtnStop.AltImage = ((System.Drawing.Image)(resources.GetObject("BtnStop.AltImage")));
-            resources.ApplyResources(this.BtnStop, "BtnStop");
-            this.BtnStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.BtnStop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BtnStop.Coloration = System.Drawing.Color.Empty;
-            this.BtnStop.Image = ((System.Drawing.Image)(resources.GetObject("BtnStop.Image")));
-            this.BtnStop.Name = "BtnStop";
-            this.BtnStop.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.FixedSize;
-            this.TT.SetToolTip(this.BtnStop, resources.GetString("BtnStop.ToolTip"));
-            this.BtnStop.UseAltImage = false;
-            // 
-            // BtnResume
-            // 
-            this.BtnResume.AltImage = null;
-            resources.ApplyResources(this.BtnResume, "BtnResume");
-            this.BtnResume.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.BtnResume.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BtnResume.Coloration = System.Drawing.Color.Empty;
-            this.BtnResume.Image = ((System.Drawing.Image)(resources.GetObject("BtnResume.Image")));
-            this.BtnResume.Name = "BtnResume";
-            this.BtnResume.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.FixedSize;
-            this.TT.SetToolTip(this.BtnResume, resources.GetString("BtnResume.ToolTip"));
-            this.BtnResume.UseAltImage = false;
-            // 
-            // BtnHoming
-            // 
-            this.BtnHoming.AltImage = null;
-            resources.ApplyResources(this.BtnHoming, "BtnHoming");
-            this.BtnHoming.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.BtnHoming.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BtnHoming.Coloration = System.Drawing.Color.Empty;
-            this.BtnHoming.Image = ((System.Drawing.Image)(resources.GetObject("BtnHoming.Image")));
-            this.BtnHoming.Name = "BtnHoming";
-            this.BtnHoming.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
-            this.TT.SetToolTip(this.BtnHoming, resources.GetString("BtnHoming.ToolTip"));
-            this.BtnHoming.UseAltImage = false;
-            this.BtnHoming.Click += new System.EventHandler(this.BtnHoming_Click);
-            // 
-            // BtnUnlock
-            // 
-            this.BtnUnlock.AltImage = null;
-            resources.ApplyResources(this.BtnUnlock, "BtnUnlock");
-            this.BtnUnlock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.BtnUnlock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BtnUnlock.Coloration = System.Drawing.Color.Empty;
-            this.BtnUnlock.Image = ((System.Drawing.Image)(resources.GetObject("BtnUnlock.Image")));
-            this.BtnUnlock.Name = "BtnUnlock";
-            this.BtnUnlock.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
-            this.TT.SetToolTip(this.BtnUnlock, resources.GetString("BtnUnlock.ToolTip"));
-            this.BtnUnlock.UseAltImage = false;
-            this.BtnUnlock.Click += new System.EventHandler(this.BtnUnlock_Click);
             // 
             // MNRemEditCB
             // 
@@ -164,6 +96,75 @@ namespace LaserGRBL
             this.tableLayoutPanel8.Controls.Add(this.BtnHoming, 2, 0);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.TabStop = true;
+            // 
+            // BtnReset
+            // 
+            this.BtnReset.AltImage = null;
+            resources.ApplyResources(this.BtnReset, "BtnReset");
+            this.BtnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BtnReset.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BtnReset.Coloration = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.BtnReset.Image = ((System.Drawing.Image)(resources.GetObject("BtnReset.Image")));
+            this.BtnReset.Name = "BtnReset";
+            this.BtnReset.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
+            this.TT.SetToolTip(this.BtnReset, resources.GetString("BtnReset.ToolTip"));
+            this.BtnReset.UseAltImage = false;
+            this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
+            // 
+            // BtnStop
+            // 
+            this.BtnStop.AltImage = ((System.Drawing.Image)(resources.GetObject("BtnStop.AltImage")));
+            resources.ApplyResources(this.BtnStop, "BtnStop");
+            this.BtnStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BtnStop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BtnStop.Coloration = System.Drawing.Color.Empty;
+            this.BtnStop.Image = ((System.Drawing.Image)(resources.GetObject("BtnStop.Image")));
+            this.BtnStop.Name = "BtnStop";
+            this.BtnStop.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.FixedSize;
+            this.TT.SetToolTip(this.BtnStop, resources.GetString("BtnStop.ToolTip"));
+            this.BtnStop.UseAltImage = false;
+            this.BtnStop.Click += new System.EventHandler(this.BtnStop_Click);
+            // 
+            // BtnResume
+            // 
+            this.BtnResume.AltImage = null;
+            resources.ApplyResources(this.BtnResume, "BtnResume");
+            this.BtnResume.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BtnResume.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BtnResume.Coloration = System.Drawing.Color.Empty;
+            this.BtnResume.Image = ((System.Drawing.Image)(resources.GetObject("BtnResume.Image")));
+            this.BtnResume.Name = "BtnResume";
+            this.BtnResume.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.FixedSize;
+            this.TT.SetToolTip(this.BtnResume, resources.GetString("BtnResume.ToolTip"));
+            this.BtnResume.UseAltImage = false;
+            // 
+            // BtnHoming
+            // 
+            this.BtnHoming.AltImage = ((System.Drawing.Image)(resources.GetObject("BtnHoming.AltImage")));
+            resources.ApplyResources(this.BtnHoming, "BtnHoming");
+            this.BtnHoming.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BtnHoming.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BtnHoming.Coloration = System.Drawing.Color.Empty;
+            this.BtnHoming.Image = ((System.Drawing.Image)(resources.GetObject("BtnHoming.Image")));
+            this.BtnHoming.Name = "BtnHoming";
+            this.BtnHoming.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
+            this.TT.SetToolTip(this.BtnHoming, resources.GetString("BtnHoming.ToolTip"));
+            this.BtnHoming.UseAltImage = false;
+            this.BtnHoming.Click += new System.EventHandler(this.BtnHoming_Click);
+            // 
+            // BtnUnlock
+            // 
+            this.BtnUnlock.AltImage = null;
+            resources.ApplyResources(this.BtnUnlock, "BtnUnlock");
+            this.BtnUnlock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BtnUnlock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BtnUnlock.Coloration = System.Drawing.Color.Empty;
+            this.BtnUnlock.Image = ((System.Drawing.Image)(resources.GetObject("BtnUnlock.Image")));
+            this.BtnUnlock.Name = "BtnUnlock";
+            this.BtnUnlock.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
+            this.TT.SetToolTip(this.BtnUnlock, resources.GetString("BtnUnlock.ToolTip"));
+            this.BtnUnlock.UseAltImage = false;
+            this.BtnUnlock.Click += new System.EventHandler(this.BtnUnlock_Click);
             // 
             // PreviewForm
             // 

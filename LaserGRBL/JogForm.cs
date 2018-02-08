@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Windows.Forms;
 
 namespace LaserGRBL
@@ -93,6 +94,27 @@ namespace LaserGRBL
         {
             Properties.Settings.Default.betweenDistance = numericUpDown2.Value;
             Properties.Settings.Default.Save();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Core.GrblHoming();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Core.EnqueueCommand(Core.buildMotionCommand(0));
+        }
+     
+        private void button2_Click(object sender, EventArgs e)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("G91 ");
+            sb.Append(Properties.Settings.Default.primaryAxis);
+            sb.Append(Properties.Settings.Default.betweenDistance + " ");
+            sb.Append("F" + Properties.Settings.Default.speed);
+            Console.WriteLine(sb.ToString());
+            Core.EnqueueCommand(new GrblCommand(sb.ToString()));
+
         }
     }
 

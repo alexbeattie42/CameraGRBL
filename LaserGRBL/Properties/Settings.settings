@@ -23,5 +23,14 @@
     <Setting Name="addTime" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="primaryAxis" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Y</Value>
+    </Setting>
+    <Setting Name="secondaryAxis" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Y</Value>
+    </Setting>
+    <Setting Name="speed" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">4000</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

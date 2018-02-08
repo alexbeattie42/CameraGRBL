@@ -17,13 +17,22 @@ namespace LaserGRBL
         public GrblCore Core;
         private VimbaHelper m_VimbaHelper = null;
         private CameraInfo selectedItem;
-        public static Decimal startDistance = Properties.Settings.Default.startDistance;
-        public static Decimal betweenDistance = Properties.Settings.Default.betweenDistance;
+        private static Decimal startDistance = Properties.Settings.Default.startDistance;
+        private static Decimal betweenDistance = Properties.Settings.Default.betweenDistance;
+       
+        private int currentIndex = 0;
+        public static bool runningCycle = false;
+        private bool home = false;
+        private bool firstPlate = true;
+        
+        
      
         
             
         private static readonly int MAX_NUM_PLATES = 8;
-        
+
+        CheckBox[] boxes = new CheckBox[MAX_NUM_PLATES];
+
         public VimbaHelper VimbaHelper { get => m_VimbaHelper; set => m_VimbaHelper = value; }
         public  CameraInfo SelectedItem { get => selectedItem; set => selectedItem = value; }
 
@@ -41,8 +50,7 @@ namespace LaserGRBL
 
             numericUpDown1.Maximum = MAX_NUM_PLATES;
         numericUpDown1.Value = Properties.Settings.Default.numPlates;
-            checkBox1.Checked = Properties.Settings.Default.addDate;
-            checkBox2.Checked = Properties.Settings.Default.addTime;
+            
 
 
             textBox1.Text = Properties.Settings.Default.fileLocation;;
@@ -61,11 +69,13 @@ namespace LaserGRBL
                 for (int i = 0; i < numericUpDown1.Value; i++)
                 {
                     box = new CheckBox();
-                    box.Tag = i.ToString();
+                    box.Tag = "box" + i.ToString();
                     box.Text = (i + 1).ToString();
+                    
                     box.AutoSize = true;
                     box.Checked = true;
                     flowLayoutPanel1.Controls.Add(box);
+                    boxes[i] = box;
 
 
                 }
@@ -82,12 +92,44 @@ namespace LaserGRBL
         }
         void OnMachineStatus()
         {
-            LogMessage("Machine Status Changed");
-            if (Core.MachineStatus == GrblCore.MacStatus.Idle)
+            Console.WriteLine("Machine Position" + Core.MachinePosition);
+           
+
+            //LogMessage("Machine Status Changed");
+            if (Core.MachineStatus == GrblCore.MacStatus.Idle && runningCycle)
             {
-                
                 LogMessage("Status Idle");
-                Console.WriteLine("StatusIdle");
+                if (firstPlate && FindCheckedBox(currentIndex))
+                {
+                    Core.EnqueueCommand(Core.buildMotionCommand(currentIndex));
+                    firstPlate = false;
+                }
+               
+                
+                else if (currentIndex >= numericUpDown1.Value || !FindCheckedBox(currentIndex))
+                {
+                    runningCycle = false;
+                    currentIndex = 0;
+                    CapSaveImage();
+                    Core.GrblHoming();
+                }
+                else
+                {
+                    CapSaveImage();
+                    Core.EnqueueCommand(Core.buildMotionCommand(currentIndex));
+
+                }
+
+            }
+            else if (Core.MachineStatus == GrblCore.MacStatus.Home)
+            {
+                LogMessage("Home");
+                Core.homeMachinePos = (decimal)Core.MachinePosition.Y;
+                home = true;
+            }
+            else 
+            {
+                home = false;
             }
 
         }
@@ -237,9 +279,32 @@ namespace LaserGRBL
                 SelectedItem = cameraInfo;
             }
         }
+        private bool FindCheckedBox(int index)
+        {
+            bool found = false;
+            while (!found && index < numericUpDown1.Value)
+            {
+        
+                    if (boxes[index].Checked)
+                    {
+                    Console.WriteLine("Box " +(index+1) + " checked");
+                        found = true;
+                        currentIndex = index;
+                    return true;
+                    }
+                    else
+                    {
+                        index++;
+                    }
+                
+            }
+            Console.WriteLine("No more boxes checked");
+            return false;
+    
+        }
         public void CapSaveImage()
         {
-            //string currentDate = DateTime.Now.ToString("h:mm:ss");
+       
 
             try
             {
@@ -255,13 +320,22 @@ namespace LaserGRBL
                 Image image = VimbaHelper.AcquireSingleImage(SelectedItem.ID);
 
                 //Display image
-                //m_PictureBox.Image = image;
+                m_PictureBox.Image = image;
 
-                string currentDate = DateTime.Now.ToString("h-mm-ss");
-                string fileName = "./Images/" + currentDate + ".png";
-                Console.WriteLine();
-                Console.WriteLine(fileName);
-                image.Save(fileName, ImageFormat.Png);
+                StringBuilder sb = new StringBuilder();
+                string currentDate = DateTime.Now.ToString("yyyy-MM-dd--H-mm-ss");
+                ImageFormat fileType = ImageFormat.Png;
+                
+                sb.Append(textBox1.Text + "\"");
+                sb.Append(currentDate + "--");
+                sb.Append(textBox2.Text);
+                sb.Append(fileType.ToString().ToLower());
+
+
+
+               // Console.WriteLine("File Name: " + sb.ToString());
+                image.Save(sb.ToString(), fileType);
+                Console.WriteLine("Image written to: " + sb.ToString());
                 LogMessage("Image acquired synchonously.");
 
                 // System.Threading.Thread.Sleep(200);
@@ -281,7 +355,22 @@ namespace LaserGRBL
         public GrblCommand firstMove = new GrblCommand(string.Format("G91 Y13 F4000 "));
         private void button1_Click(object sender, EventArgs e)
         {
-            Core.EnqueueCommand(firstMove);
+            runningCycle = true;
+            currentIndex = 0;
+            FindCheckedBox(currentIndex);
+            
+            if (home)
+            {
+                firstPlate = false;
+                Core.EnqueueCommand(Core.buildMotionCommand(currentIndex));
+            }
+            else
+            {
+                Core.GrblHoming();
+                firstPlate = true;
+                
+            }
+            
            // CapSaveImage();
         }
 
@@ -310,16 +399,20 @@ namespace LaserGRBL
             Properties.Settings.Default.Save();
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.addDate = checkBox1.Checked;
-            Properties.Settings.Default.Save();
+            foreach(CheckBox box in boxes)
+            {
+                box.Checked = false;
+            }
         }
 
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.addTime = checkBox2.Checked;
-            Properties.Settings.Default.Save();
+            foreach (CheckBox box in boxes)
+            {
+                box.Checked = true ;
+            }
         }
     }
 }

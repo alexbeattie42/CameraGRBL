@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Text;
 
 namespace LaserGRBL
 {
@@ -8,7 +9,8 @@ namespace LaserGRBL
 	/// </summary>
 	public class GrblCore
 	{
-		[Serializable]
+       
+        [Serializable]
 		public class ThreadingMode
 		{
 			public readonly int StatusQuery;
@@ -17,8 +19,9 @@ namespace LaserGRBL
 			public readonly int RxLong;
 			public readonly int RxShort;
 			private readonly string Name;
+           
 
-			public ThreadingMode(int query, int txlong, int txshort, int rxlong, int rxshort, string name)
+            public ThreadingMode(int query, int txlong, int txshort, int rxlong, int rxshort, string name)
 			{ StatusQuery = query; TxLong = txlong; TxShort = txshort; RxLong = rxlong; RxShort = rxshort; Name = name; }
 
 			public static ThreadingMode Slow
@@ -277,7 +280,20 @@ namespace LaserGRBL
 				}
 			}
 		}
+        public Decimal homeMachinePos = 0;
+        public GrblCommand buildMotionCommand(int position)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("G91 ");
+            sb.Append(Properties.Settings.Default.primaryAxis);
+            //
+            decimal distance = homeMachinePos + Properties.Settings.Default.startDistance + (Properties.Settings.Default.betweenDistance * position);
+            sb.Append(distance + " ");
+            sb.Append("F" + Properties.Settings.Default.speed);
+            Console.WriteLine(sb.ToString());
+            return new GrblCommand(sb.ToString());
 
+        }
 		private void SetStatus(MacStatus value)
 		{
 			if (mMachineStatus != value)

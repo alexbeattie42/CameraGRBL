@@ -106,5 +106,41 @@ namespace LaserGRBL.Properties {
                 this["addTime"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Y")]
+        public string primaryAxis {
+            get {
+                return ((string)(this["primaryAxis"]));
+            }
+            set {
+                this["primaryAxis"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Y")]
+        public string secondaryAxis {
+            get {
+                return ((string)(this["secondaryAxis"]));
+            }
+            set {
+                this["secondaryAxis"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("4000")]
+        public decimal speed {
+            get {
+                return ((decimal)(this["speed"]));
+            }
+            set {
+                this["speed"] = value;
+            }
+        }
     }
 }
