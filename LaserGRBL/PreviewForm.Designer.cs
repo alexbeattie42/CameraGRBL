@@ -102,8 +102,7 @@ namespace LaserGRBL
             this.BtnReset.AltImage = null;
             resources.ApplyResources(this.BtnReset, "BtnReset");
             this.BtnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.BtnReset.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BtnReset.Coloration = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.BtnReset.Coloration = System.Drawing.Color.Empty;
             this.BtnReset.Image = ((System.Drawing.Image)(resources.GetObject("BtnReset.Image")));
             this.BtnReset.Name = "BtnReset";
             this.BtnReset.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
@@ -116,11 +115,10 @@ namespace LaserGRBL
             this.BtnStop.AltImage = ((System.Drawing.Image)(resources.GetObject("BtnStop.AltImage")));
             resources.ApplyResources(this.BtnStop, "BtnStop");
             this.BtnStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.BtnStop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.BtnStop.Coloration = System.Drawing.Color.Empty;
             this.BtnStop.Image = ((System.Drawing.Image)(resources.GetObject("BtnStop.Image")));
             this.BtnStop.Name = "BtnStop";
-            this.BtnStop.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.FixedSize;
+            this.BtnStop.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.StretchImage;
             this.TT.SetToolTip(this.BtnStop, resources.GetString("BtnStop.ToolTip"));
             this.BtnStop.UseAltImage = false;
             this.BtnStop.Click += new System.EventHandler(this.BtnStop_Click);
@@ -130,7 +128,6 @@ namespace LaserGRBL
             this.BtnResume.AltImage = null;
             resources.ApplyResources(this.BtnResume, "BtnResume");
             this.BtnResume.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.BtnResume.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.BtnResume.Coloration = System.Drawing.Color.Empty;
             this.BtnResume.Image = ((System.Drawing.Image)(resources.GetObject("BtnResume.Image")));
             this.BtnResume.Name = "BtnResume";
@@ -140,10 +137,9 @@ namespace LaserGRBL
             // 
             // BtnHoming
             // 
-            this.BtnHoming.AltImage = ((System.Drawing.Image)(resources.GetObject("BtnHoming.AltImage")));
+            this.BtnHoming.AltImage = null;
             resources.ApplyResources(this.BtnHoming, "BtnHoming");
             this.BtnHoming.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.BtnHoming.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.BtnHoming.Coloration = System.Drawing.Color.Empty;
             this.BtnHoming.Image = ((System.Drawing.Image)(resources.GetObject("BtnHoming.Image")));
             this.BtnHoming.Name = "BtnHoming";
@@ -157,7 +153,6 @@ namespace LaserGRBL
             this.BtnUnlock.AltImage = null;
             resources.ApplyResources(this.BtnUnlock, "BtnUnlock");
             this.BtnUnlock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.BtnUnlock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.BtnUnlock.Coloration = System.Drawing.Color.Empty;
             this.BtnUnlock.Image = ((System.Drawing.Image)(resources.GetObject("BtnUnlock.Image")));
             this.BtnUnlock.Name = "BtnUnlock";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CameraControl));
             this.m_CameraListTable = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,7 +68,6 @@
             // 
             this.m_CameraListTable.ColumnCount = 1;
             this.m_CameraListTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.m_CameraListTable.Controls.Add(this.button1, 0, 10);
             this.m_CameraListTable.Controls.Add(this.label1, 0, 0);
             this.m_CameraListTable.Controls.Add(this.flowLayoutPanel2, 0, 3);
             this.m_CameraListTable.Controls.Add(this.m_CameraList, 0, 1);
@@ -78,6 +78,7 @@
             this.m_CameraListTable.Controls.Add(this.m_AcquireButton, 0, 11);
             this.m_CameraListTable.Controls.Add(this.label6, 0, 4);
             this.m_CameraListTable.Controls.Add(this.flowLayoutPanel3, 0, 5);
+            this.m_CameraListTable.Controls.Add(this.button1, 0, 10);
             this.m_CameraListTable.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_CameraListTable.Location = new System.Drawing.Point(0, 0);
             this.m_CameraListTable.Name = "m_CameraListTable";
@@ -101,13 +102,18 @@
             // 
             // button1
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button1.Location = new System.Drawing.Point(3, 425);
+            this.button1.Location = new System.Drawing.Point(89, 425);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(323, 39);
+            this.button1.Size = new System.Drawing.Size(151, 39);
             this.button1.TabIndex = 8;
-            this.button1.Text = "Run Cycle";
+            this.button1.Text = "Image Plates";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -239,15 +245,15 @@
             // 
             // m_AcquireButton
             // 
+            this.m_AcquireButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.m_AcquireButton.AutoSize = true;
-            this.m_AcquireButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.m_AcquireButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_AcquireButton.Enabled = false;
+            this.m_AcquireButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_AcquireButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.m_AcquireButton.Location = new System.Drawing.Point(0, 470);
+            this.m_AcquireButton.Location = new System.Drawing.Point(89, 470);
             this.m_AcquireButton.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.m_AcquireButton.Name = "m_AcquireButton";
-            this.m_AcquireButton.Size = new System.Drawing.Size(329, 38);
+            this.m_AcquireButton.Size = new System.Drawing.Size(150, 38);
             this.m_AcquireButton.TabIndex = 3;
             this.m_AcquireButton.Text = "Acquire single image";
             this.m_AcquireButton.UseVisualStyleBackColor = true;

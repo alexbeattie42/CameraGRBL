@@ -43,7 +43,7 @@ namespace LaserGRBL
 			//BtnHoming.Visible = Core.Configuration.HomingEnabled;
 			BtnHoming.Enabled = Core.CanDoHoming;
 			BtnUnlock.Enabled = Core.CanUnlock;
-			BtnStop.Enabled = Core.CanFeedHold;
+			BtnStop.Enabled = Core.CanDoHoming;
             //BtnResume.Enabled = Core.CanResumeHold;
       
 			//BtnZeroing.Enabled = Core.CanDoZeroing;
