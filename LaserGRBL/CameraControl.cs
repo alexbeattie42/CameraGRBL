@@ -1,14 +1,11 @@
-﻿using System;
+﻿using SynchronousGrab;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using SynchronousGrab;
-
-using System.Drawing.Imaging;
 
 namespace LaserGRBL
 {
@@ -23,7 +20,7 @@ namespace LaserGRBL
         private int currentIndex = 0;
         public static bool runningCycle = false;
         private bool home = false;
-        private bool firstPlate = true;
+        private bool goToFirstPlate = true;
         
         
      
@@ -90,31 +87,60 @@ namespace LaserGRBL
             Core = core;
             Core.MachineStatusChanged += OnMachineStatus;
         }
+        bool foundPlate = false ;
         void OnMachineStatus()
         {
+            
+            if (runningCycle)
+            {
+                button1.Enabled = false;
+            }
+            else if (m_CameraList.SelectedItem != null && Core.IsOpen )
+            {
+                button1.Enabled = true;
+            }
+
             Console.WriteLine("Machine Position" + Core.MachinePosition);
            
 
             //LogMessage("Machine Status Changed");
-            if (Core.MachineStatus == GrblCore.MacStatus.Idle && runningCycle)
+            if (Core.MachineStatus == GrblCore.MacStatus.Idle && runningCycle )
             {
-                LogMessage("Status Idle");
-                if (firstPlate && FindCheckedBox(currentIndex))
-                {
-                    Core.EnqueueCommand(Core.buildMotionCommand(currentIndex));
-                    firstPlate = false;
-                }
                
-                
-                else if (currentIndex >= numericUpDown1.Value || !FindCheckedBox(currentIndex))
+                Console.WriteLine("Idle and cycle Running");
+                LogMessage("Idle and Cycle Running");
+                if (goToFirstPlate)
                 {
-                    runningCycle = false;
-                    currentIndex = 0;
-                    CapSaveImage();
-                    Core.GrblHoming();
+                    LogMessage("Going to First plate");
                 }
                 else
                 {
+                    foundPlate = FindCheckedBox(currentIndex, false);
+                }
+                
+                
+                //LogMessage("Status Idle");
+                if (goToFirstPlate )
+                {
+                    
+                    Core.EnqueueCommand(Core.buildMotionCommand(currentIndex));
+                    goToFirstPlate = false;
+                }
+               
+                else if (currentIndex >= numericUpDown1.Value || !foundPlate )
+                {
+                                      
+                        runningCycle = false;
+                        currentIndex = 0;
+                        CapSaveImage();
+                        Core.GrblHoming();
+                        button1.Enabled = true;
+                  
+                }
+      
+                else
+                {
+                   
                     CapSaveImage();
                     Core.EnqueueCommand(Core.buildMotionCommand(currentIndex));
 
@@ -126,10 +152,20 @@ namespace LaserGRBL
                 LogMessage("Home");
                 Core.homeMachinePos = (decimal)Core.MachinePosition.Y;
                 home = true;
+                //button1.Enabled = true;
             }
-            else 
+            else if (Core.MachineStatus == GrblCore.MacStatus.Alarm)
             {
+                LogError("The machine has encountered an error. Please home and/or reset it.");
+            }
+            else if (Core.MachineStatus == GrblCore.MacStatus.Run || Core.MachineStatus == GrblCore.MacStatus.Jog)
+            {
+                //LogMessage("Not Home");
                 home = false;
+            }
+            else if (Core.MachineStatus == GrblCore.MacStatus.Alarm)
+            {
+                runningCycle = false;
             }
 
         }
@@ -185,6 +221,7 @@ namespace LaserGRBL
             //If available select a camera.
             if (null != newSelectedItem)
             {
+                
                 m_CameraList.SelectedItem = newSelectedItem;
             }
         }
@@ -204,7 +241,7 @@ namespace LaserGRBL
                 try
                 {
                     UpdateCameraList();
-
+                  
                     LogMessage("Camera list updated.");
                 }
                 catch (Exception exception)
@@ -279,29 +316,33 @@ namespace LaserGRBL
                 SelectedItem = cameraInfo;
             }
         }
-        private bool FindCheckedBox(int index)
+        private bool FindCheckedBox (int index, bool firstBox)
         {
-            bool found = false;
-            while (!found && index < numericUpDown1.Value)
+           
+            if (!firstBox)
             {
-        
-                    if (boxes[index].Checked)
-                    {
-                    Console.WriteLine("Box " +(index+1) + " checked");
-                        found = true;
-                        currentIndex = index;
+                index++;
+            }
+            while ( index < numericUpDown1.Value)
+            {
+
+                if (boxes[index].Checked)
+                {
+                    Console.WriteLine("Box " + (index + 1) + " checked");
+                    
+                    currentIndex = index;
                     return true;
-                    }
-                    else
-                    {
-                        index++;
-                    }
-                
+                }
+                else
+                {
+                    index++;
+                }
+
             }
             Console.WriteLine("No more boxes checked");
             return false;
-    
         }
+       
         public void CapSaveImage()
         {
        
@@ -326,16 +367,16 @@ namespace LaserGRBL
                 string currentDate = DateTime.Now.ToString("yyyy-MM-dd--H-mm-ss");
                 ImageFormat fileType = ImageFormat.Png;
                 
-                sb.Append(textBox1.Text + "\"");
+                
                 sb.Append(currentDate + "--");
                 sb.Append(textBox2.Text);
-                sb.Append(fileType.ToString().ToLower());
+                sb.Append("." + fileType.ToString().ToLower());
 
-
-
-               // Console.WriteLine("File Name: " + sb.ToString());
-                image.Save(sb.ToString(), fileType);
-                Console.WriteLine("Image written to: " + sb.ToString());
+                String filePath = Path.Combine(textBox1.Text, sb.ToString());
+                Console.WriteLine("Image written to: " + filePath);
+                // Console.WriteLine("File Name: " + sb.ToString());
+                image.Save(filePath, fileType);
+                Console.WriteLine("Image written to: " + filePath);
                 LogMessage("Image acquired synchonously.");
 
                 // System.Threading.Thread.Sleep(200);
@@ -348,30 +389,29 @@ namespace LaserGRBL
             }
         }
 
-        private void m_CameraListTable_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        public GrblCommand firstMove = new GrblCommand(string.Format("G91 Y13 F4000 "));
+       
+  
         private void button1_Click(object sender, EventArgs e)
         {
             runningCycle = true;
             currentIndex = 0;
-            FindCheckedBox(currentIndex);
-            
+            FindCheckedBox(currentIndex, true);
+            button1.Enabled = false;
+
             if (home)
             {
-                firstPlate = false;
+                goToFirstPlate = false;
                 Core.EnqueueCommand(Core.buildMotionCommand(currentIndex));
             }
             else
             {
+
                 Core.GrblHoming();
-                firstPlate = true;
-                
+
+                goToFirstPlate = true;
+
             }
-            
-           // CapSaveImage();
+        
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)

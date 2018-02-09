@@ -279,7 +279,7 @@
             this.TbSpeed.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TbSpeed.LargeChange = 100;
             this.TbSpeed.Location = new System.Drawing.Point(3, 3);
-            this.TbSpeed.Maximum = 4000;
+            this.TbSpeed.Maximum = 20000;
             this.TbSpeed.Minimum = 10;
             this.TbSpeed.Name = "TbSpeed";
             this.TbSpeed.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -326,7 +326,7 @@
             this.TbStep.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TbStep.LargeChange = 10;
             this.TbStep.Location = new System.Drawing.Point(3, 3);
-            this.TbStep.Maximum = 200;
+            this.TbStep.Maximum = 550;
             this.TbStep.Minimum = 1;
             this.TbStep.Name = "TbStep";
             this.TbStep.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -430,6 +430,11 @@
             // numericUpDown2
             // 
             this.numericUpDown2.Location = new System.Drawing.Point(136, 29);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown2.TabIndex = 5;

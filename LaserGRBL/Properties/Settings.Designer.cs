@@ -61,7 +61,7 @@ namespace LaserGRBL.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        [global::System.Configuration.DefaultSettingValueAttribute("14")]
         public decimal startDistance {
             get {
                 return ((decimal)(this["startDistance"]));
@@ -73,7 +73,7 @@ namespace LaserGRBL.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("15")]
+        [global::System.Configuration.DefaultSettingValueAttribute("140")]
         public decimal betweenDistance {
             get {
                 return ((decimal)(this["betweenDistance"]));
@@ -133,7 +133,7 @@ namespace LaserGRBL.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("4000")]
+        [global::System.Configuration.DefaultSettingValueAttribute("10000")]
         public decimal speed {
             get {
                 return ((decimal)(this["speed"]));

@@ -12,10 +12,10 @@
       <Value Profile="(Default)">C:\</Value>
     </Setting>
     <Setting Name="startDistance" Type="System.Decimal" Scope="User">
-      <Value Profile="(Default)">5</Value>
+      <Value Profile="(Default)">14</Value>
     </Setting>
     <Setting Name="betweenDistance" Type="System.Decimal" Scope="User">
-      <Value Profile="(Default)">15</Value>
+      <Value Profile="(Default)">140</Value>
     </Setting>
     <Setting Name="addDate" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
@@ -30,7 +30,7 @@
       <Value Profile="(Default)">Y</Value>
     </Setting>
     <Setting Name="speed" Type="System.Decimal" Scope="User">
-      <Value Profile="(Default)">4000</Value>
+      <Value Profile="(Default)">10000</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -32,6 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.ConnectionForm = new LaserGRBL.ConnectLogForm();
+            this.previewForm1 = new LaserGRBL.PreviewForm();
+            this.cameraControl1 = new LaserGRBL.CameraControl();
             this.StatusBar = new System.Windows.Forms.StatusStrip();
             this.TTLLines = new System.Windows.Forms.ToolStripStatusLabel();
             this.TTTLines = new System.Windows.Forms.ToolStripStatusLabel();
@@ -96,9 +99,6 @@
             this.donateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AwakeTimer = new System.Windows.Forms.Timer(this.components);
-            this.ConnectionForm = new LaserGRBL.ConnectLogForm();
-            this.previewForm1 = new LaserGRBL.PreviewForm();
-            this.cameraControl1 = new LaserGRBL.CameraControl();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -128,6 +128,23 @@
             this.tableLayoutPanel1.Controls.Add(this.ConnectionForm, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.previewForm1, 0, 1);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
+            // ConnectionForm
+            // 
+            resources.ApplyResources(this.ConnectionForm, "ConnectionForm");
+            this.ConnectionForm.Name = "ConnectionForm";
+            // 
+            // previewForm1
+            // 
+            resources.ApplyResources(this.previewForm1, "previewForm1");
+            this.previewForm1.Name = "previewForm1";
+            // 
+            // cameraControl1
+            // 
+            resources.ApplyResources(this.cameraControl1, "cameraControl1");
+            this.cameraControl1.Name = "cameraControl1";
+            this.cameraControl1.SelectedItem = null;
+            this.cameraControl1.VimbaHelper = null;
             // 
             // StatusBar
             // 
@@ -572,23 +589,6 @@
             this.AwakeTimer.Enabled = true;
             this.AwakeTimer.Interval = 20000;
             this.AwakeTimer.Tick += new System.EventHandler(this.AwakeTimer_Tick);
-            // 
-            // ConnectionForm
-            // 
-            resources.ApplyResources(this.ConnectionForm, "ConnectionForm");
-            this.ConnectionForm.Name = "ConnectionForm";
-            // 
-            // previewForm1
-            // 
-            resources.ApplyResources(this.previewForm1, "previewForm1");
-            this.previewForm1.Name = "previewForm1";
-            // 
-            // cameraControl1
-            // 
-            resources.ApplyResources(this.cameraControl1, "cameraControl1");
-            this.cameraControl1.Name = "cameraControl1";
-            this.cameraControl1.SelectedItem = null;
-            this.cameraControl1.VimbaHelper = null;
             // 
             // MainForm
             // 

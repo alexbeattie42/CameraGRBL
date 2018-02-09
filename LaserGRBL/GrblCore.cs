@@ -284,10 +284,10 @@ namespace LaserGRBL
         public GrblCommand buildMotionCommand(int position)
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("G91 ");
+            sb.Append("G90");
             sb.Append(Properties.Settings.Default.primaryAxis);
-            //
-            decimal distance = homeMachinePos + Properties.Settings.Default.startDistance + (Properties.Settings.Default.betweenDistance * position);
+            // homeMachinePos
+            decimal distance =  homeMachinePos + Properties.Settings.Default.startDistance + (Properties.Settings.Default.betweenDistance * position);
             sb.Append(distance + " ");
             sb.Append("F" + Properties.Settings.Default.speed);
             Console.WriteLine(sb.ToString());

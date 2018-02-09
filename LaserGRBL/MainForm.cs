@@ -96,7 +96,7 @@ namespace LaserGRBL
                 //Start up Vimba API
                 VimbaHelper vimbaHelper = new VimbaHelper();
                 vimbaHelper.Startup(cameraControl1.OnCameraListChanged);
-                Text += String.Format(" Vimba .NET API Version {0}", vimbaHelper.GetVersion());
+                //Text += String.Format(" Vimba .NET API Version {0}", vimbaHelper.GetVersion());
                 m_VimbaHelper = vimbaHelper;
                 cameraControl1.VimbaHelper = m_VimbaHelper;
 
@@ -184,6 +184,7 @@ namespace LaserGRBL
 			ConnectionForm.TimerUpdate();
             previewForm1.TimerUpdate();
 			//JogForm.Enabled = Core.JogEnabled;
+
 		}
 
 		private void TimerUpdate()
@@ -200,8 +201,8 @@ namespace LaserGRBL
 				TTLEstimated.Text = Strings.MainFormProjectedTime;
 			else
 				TTLEstimated.Text = Strings.MainFormEstimatedTime;
-
-			MnFileOpen.Enabled = Core.CanLoadNewFile;
+            //cameraControl1.button1.Enabled = Core.IsOpen;
+            MnFileOpen.Enabled = Core.CanLoadNewFile;
 			MnSaveProgram.Enabled = Core.HasProgram;
 			MnFileSend.Enabled = Core.CanSendFile;
 			MnStartFromPosition.Enabled = Core.CanSendFile;
@@ -269,8 +270,9 @@ namespace LaserGRBL
 		private void RefreshFormTitle()
 		{
 			Version current = typeof(GitHub).Assembly.GetName().Version;
-			string FormTitle = string.Format("LaserGRBL v{0}", current.ToString(3));
-			if (Text != FormTitle) Text = FormTitle;
+            string FormTitle = string.Format("CameraGRBL v{0}", current.ToString(3));
+        
+            if (Text != FormTitle) Text = FormTitle;
 		}
 
 		void ExitToolStripMenuItemClick(object sender, EventArgs e)
@@ -564,6 +566,11 @@ namespace LaserGRBL
         }
 
         private void cameraControl1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cameraControl1_Load_1(object sender, EventArgs e)
         {
 
         }

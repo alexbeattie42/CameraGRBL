@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CameraControl));
             this.m_CameraListTable = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
@@ -50,6 +49,7 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.m_PictureBox = new System.Windows.Forms.PictureBox();
             this.m_LogTable = new System.Windows.Forms.TableLayoutPanel();
             this.m_LogList = new System.Windows.Forms.ListBox();
@@ -98,24 +98,6 @@
             this.m_CameraListTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.m_CameraListTable.Size = new System.Drawing.Size(329, 508);
             this.m_CameraListTable.TabIndex = 5;
-            this.m_CameraListTable.Paint += new System.Windows.Forms.PaintEventHandler(this.m_CameraListTable_Paint);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button1.Location = new System.Drawing.Point(89, 425);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(151, 39);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Image Plates";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -241,7 +223,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 13);
             this.label5.TabIndex = 14;
-            this.label5.Text = "Plant Configuration";
+            this.label5.Text = "Plate Configuration";
             // 
             // m_AcquireButton
             // 
@@ -305,6 +287,24 @@
             this.comboBox1.Size = new System.Drawing.Size(55, 21);
             this.comboBox1.TabIndex = 3;
             this.comboBox1.Text = ".png";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Enabled = false;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.button1.Location = new System.Drawing.Point(89, 425);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(151, 39);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Image Plates";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // m_PictureBox
             // 
@@ -391,7 +391,7 @@
         private System.Windows.Forms.TableLayoutPanel m_LogTable;
         private System.Windows.Forms.ListBox m_LogList;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListBox m_CameraList;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label3;

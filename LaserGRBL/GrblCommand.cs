@@ -426,7 +426,7 @@ namespace LaserGRBL
 			else if (mMessage.ToLower().StartsWith("alarm"))
             {
                 mType = MessageType.Alarm;
-                System.Windows.Forms.MessageBox.Show("The machine has encountered an error. Please home and/or reset it.\n View the message log for more details.", "Limit Error");
+                
             }
 				
 			else if (mMessage.StartsWith("<") && mMessage.EndsWith(">"))
