@@ -25,7 +25,7 @@ namespace LaserGRBL.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        [global::System.Configuration.DefaultSettingValueAttribute("4")]
         public decimal numPlates {
             get {
                 return ((decimal)(this["numPlates"]));
@@ -49,7 +49,7 @@ namespace LaserGRBL.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\Public\\Pictures")]
         public string fileLocation {
             get {
                 return ((string)(this["fileLocation"]));

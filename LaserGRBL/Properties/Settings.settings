@@ -3,13 +3,13 @@
   <Profiles />
   <Settings>
     <Setting Name="numPlates" Type="System.Decimal" Scope="User">
-      <Value Profile="(Default)">5</Value>
+      <Value Profile="(Default)">4</Value>
     </Setting>
     <Setting Name="fileName" Type="System.String" Scope="User">
       <Value Profile="(Default)">SPIPImages</Value>
     </Setting>
     <Setting Name="fileLocation" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\</Value>
+      <Value Profile="(Default)">C:\Users\Public\Pictures</Value>
     </Setting>
     <Setting Name="startDistance" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">14</Value>

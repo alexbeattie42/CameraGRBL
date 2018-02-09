@@ -393,15 +393,20 @@ namespace LaserGRBL
   
         private void button1_Click(object sender, EventArgs e)
         {
+            
             runningCycle = true;
             currentIndex = 0;
-            FindCheckedBox(currentIndex, true);
+            bool isPlateFound = FindCheckedBox(currentIndex, true);
             button1.Enabled = false;
 
             if (home)
             {
                 goToFirstPlate = false;
-                Core.EnqueueCommand(Core.buildMotionCommand(currentIndex));
+                if (isPlateFound)
+                {
+                    Core.EnqueueCommand(Core.buildMotionCommand(currentIndex));
+                }
+                
             }
             else
             {
@@ -443,7 +448,11 @@ namespace LaserGRBL
         {
             foreach(CheckBox box in boxes)
             {
-                box.Checked = false;
+                if(box != null)
+                {
+                    box.Checked = false;
+                }
+              
             }
         }
 
@@ -451,7 +460,12 @@ namespace LaserGRBL
         {
             foreach (CheckBox box in boxes)
             {
-                box.Checked = true ;
+                if(box != null)
+                {
+                    box.Checked = true;
+
+                }
+                
             }
         }
     }
