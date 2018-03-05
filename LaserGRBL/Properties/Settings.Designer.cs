@@ -61,7 +61,7 @@ namespace LaserGRBL.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("14")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
         public decimal startDistance {
             get {
                 return ((decimal)(this["startDistance"]));
@@ -73,7 +73,7 @@ namespace LaserGRBL.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("140")]
+        [global::System.Configuration.DefaultSettingValueAttribute("132")]
         public decimal betweenDistance {
             get {
                 return ((decimal)(this["betweenDistance"]));
@@ -109,7 +109,7 @@ namespace LaserGRBL.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Y")]
+        [global::System.Configuration.DefaultSettingValueAttribute("X")]
         public string primaryAxis {
             get {
                 return ((string)(this["primaryAxis"]));

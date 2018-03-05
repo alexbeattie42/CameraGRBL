@@ -12,10 +12,10 @@
       <Value Profile="(Default)">C:\Users\Public\Pictures</Value>
     </Setting>
     <Setting Name="startDistance" Type="System.Decimal" Scope="User">
-      <Value Profile="(Default)">14</Value>
+      <Value Profile="(Default)">1</Value>
     </Setting>
     <Setting Name="betweenDistance" Type="System.Decimal" Scope="User">
-      <Value Profile="(Default)">140</Value>
+      <Value Profile="(Default)">132</Value>
     </Setting>
     <Setting Name="addDate" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
@@ -24,7 +24,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="primaryAxis" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Y</Value>
+      <Value Profile="(Default)">X</Value>
     </Setting>
     <Setting Name="secondaryAxis" Type="System.String" Scope="User">
       <Value Profile="(Default)">Y</Value>

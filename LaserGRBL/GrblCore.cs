@@ -281,17 +281,36 @@ namespace LaserGRBL
 			}
 		}
         public Decimal homeMachinePos = 0;
-        public GrblCommand buildMotionCommand(int position)
+        private GrblCommand buildCommand(decimal distance)
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("G90");
             sb.Append(Properties.Settings.Default.primaryAxis);
             // homeMachinePos
-            decimal distance =  homeMachinePos + Properties.Settings.Default.startDistance + (Properties.Settings.Default.betweenDistance * position);
+            //decimal distance = homeMachinePos + Properties.Settings.Default.startDistance + (Properties.Settings.Default.betweenDistance * position) + offset;
             sb.Append(distance + " ");
             sb.Append("F" + Properties.Settings.Default.speed);
             Console.WriteLine(sb.ToString());
             return new GrblCommand(sb.ToString());
+        }
+
+        public GrblCommand buildMotionCommand(int position, decimal offset)
+        {
+
+          
+            decimal distance = homeMachinePos + Properties.Settings.Default.startDistance + (Properties.Settings.Default.betweenDistance * position) + offset;
+           
+            return buildCommand(distance);
+
+        }
+        public GrblCommand buildMotionCommand(int position)
+        {
+           
+           
+            decimal distance =  homeMachinePos + Properties.Settings.Default.startDistance + (Properties.Settings.Default.betweenDistance * position);
+            
+            
+            return buildCommand(distance);
 
         }
 		private void SetStatus(MacStatus value)

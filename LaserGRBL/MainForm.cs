@@ -1,6 +1,8 @@
 ﻿using SynchronousGrab;
 using System;
+using System.Diagnostics;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace LaserGRBL
@@ -15,8 +17,9 @@ namespace LaserGRBL
         public MainForm()
 		{
 			InitializeComponent();
-
-			MMn.Renderer = new MMnRenderer();
+            Application.ThreadException += new ThreadExceptionEventHandler(Application_ThreadException);
+            AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
+            MMn.Renderer = new MMnRenderer();
 
 			splitContainer1.FixedPanel = FixedPanel.Panel1;
 			splitContainer1.SplitterDistance = (int)Settings.GetObject("MainForm Splitter Position", 260);
@@ -66,8 +69,18 @@ namespace LaserGRBL
 			
 			RefreshOverride();
 		}
+        static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
+        {
+            // Log the exception, display it, etc
+            Debug.WriteLine(e.Exception.Message);
+        }
 
-		void GitHub_NewVersion(Version current, Version latest, string name, string url)
+        static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            // Log the exception, display it, etc
+            Debug.WriteLine((e.ExceptionObject as Exception).Message);
+        }
+        void GitHub_NewVersion(Version current, Version latest, string name, string url)
 		{
 			if (InvokeRequired)
 			{
@@ -140,6 +153,10 @@ namespace LaserGRBL
                 Settings.Save();
 
                 UsageStats.SaveFile(Core);
+            }
+            else
+            {
+                Core.CloseCom(false);
             }
         }
 

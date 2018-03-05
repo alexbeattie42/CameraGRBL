@@ -21,7 +21,7 @@ namespace LaserGRBL
         public static bool runningCycle = false;
         private bool home = false;
         private bool goToFirstPlate = true;
-        
+        private bool firstRun = true;
         
      
         
@@ -133,8 +133,13 @@ namespace LaserGRBL
                         runningCycle = false;
                         currentIndex = 0;
                         CapSaveImage();
-                        Core.GrblHoming();
-                        button1.Enabled = true;
+                  
+                
+                        Core.EnqueueCommand(Core.buildMotionCommand(0,2));
+                 
+                        //Core.GrblHoming();
+                  
+                    button1.Enabled = true;
                   
                 }
       
@@ -150,8 +155,9 @@ namespace LaserGRBL
             else if (Core.MachineStatus == GrblCore.MacStatus.Home)
             {
                 LogMessage("Home");
-                Core.homeMachinePos = (decimal)Core.MachinePosition.Y;
+                Core.homeMachinePos = (decimal)Core.MachinePosition.X;
                 home = true;
+                firstRun = false;
                 //button1.Enabled = true;
             }
             else if (Core.MachineStatus == GrblCore.MacStatus.Alarm)
@@ -166,6 +172,7 @@ namespace LaserGRBL
             else if (Core.MachineStatus == GrblCore.MacStatus.Alarm)
             {
                 runningCycle = false;
+                firstRun = true;
             }
 
         }
@@ -373,7 +380,7 @@ namespace LaserGRBL
                 sb.Append("." + fileType.ToString().ToLower());
 
                 String filePath = Path.Combine(textBox1.Text, sb.ToString());
-                Console.WriteLine("Image written to: " + filePath);
+                //Console.WriteLine("Image written to: " + filePath);
                 // Console.WriteLine("File Name: " + sb.ToString());
                 image.Save(filePath, fileType);
                 Console.WriteLine("Image written to: " + filePath);
@@ -398,22 +405,24 @@ namespace LaserGRBL
             currentIndex = 0;
             bool isPlateFound = FindCheckedBox(currentIndex, true);
             button1.Enabled = false;
-
-            if (home)
+            if (!isPlateFound){
+                return;
+            }
+            if (home || !firstRun)
             {
                 goToFirstPlate = false;
-                if (isPlateFound)
-                {
+             
                     Core.EnqueueCommand(Core.buildMotionCommand(currentIndex));
-                }
+               
                 
             }
-            else
+            else if (firstRun)
             {
 
                 Core.GrblHoming();
 
                 goToFirstPlate = true;
+                
 
             }
         
