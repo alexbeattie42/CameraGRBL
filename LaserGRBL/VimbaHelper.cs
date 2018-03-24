@@ -417,6 +417,37 @@ namespace SynchronousGrab
         /// </summary>
         /// <param name="cameraID">The Camera ID</param>
         /// <returns>The acquired image as .NET image</returns>
+        public bool loadCamSettings(string fileName,string id)
+        {
+            //Check parameter
+            if (null == id)
+            {
+                throw new ArgumentNullException("id");
+            }
+
+            //Check if API has been started up at all
+            if (null == m_Vimba)
+            {
+                throw new Exception("Vimba is not started.");
+            }
+            
+            //Open camera
+            Camera camera = m_Vimba.OpenCameraByID(id, VmbAccessModeType.VmbAccessModeFull);
+            if (null == camera)
+            {
+                throw new NullReferenceException("No camera retrieved.");
+            }
+            try
+            {
+                camera.LoadCameraSettings(fileName);
+            }
+            finally
+            {
+                camera.Close();
+            }
+            return true;
+        }
+    
         public Image AcquireSingleImage(string id)
         {
             //Check parameter

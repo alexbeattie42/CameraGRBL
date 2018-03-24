@@ -48,14 +48,19 @@
             this.LblStep = new System.Windows.Forms.Label();
             this.TT = new System.Windows.Forms.ToolTip(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tlp.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TbSpeed)).BeginInit();
@@ -64,6 +69,7 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -99,7 +105,7 @@
             this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlp.Size = new System.Drawing.Size(288, 136);
+            this.tlp.Size = new System.Drawing.Size(263, 150);
             this.tlp.TabIndex = 0;
             // 
             // BtnHome
@@ -110,7 +116,7 @@
             this.BtnHome.Coloration = System.Drawing.Color.Empty;
             this.BtnHome.Image = ((System.Drawing.Image)(resources.GetObject("BtnHome.Image")));
             this.BtnHome.JogDirection = LaserGRBL.GrblCore.JogDirection.N;
-            this.BtnHome.Location = new System.Drawing.Point(127, 50);
+            this.BtnHome.Location = new System.Drawing.Point(115, 57);
             this.BtnHome.MaximumSize = new System.Drawing.Size(48, 48);
             this.BtnHome.Name = "BtnHome";
             this.BtnHome.Size = new System.Drawing.Size(33, 33);
@@ -127,7 +133,7 @@
             this.imageButton1.Coloration = System.Drawing.Color.Empty;
             this.imageButton1.Image = ((System.Drawing.Image)(resources.GetObject("imageButton1.Image")));
             this.imageButton1.JogDirection = LaserGRBL.GrblCore.JogDirection.W;
-            this.imageButton1.Location = new System.Drawing.Point(86, 50);
+            this.imageButton1.Location = new System.Drawing.Point(74, 57);
             this.imageButton1.MaximumSize = new System.Drawing.Size(48, 48);
             this.imageButton1.Name = "imageButton1";
             this.imageButton1.Size = new System.Drawing.Size(33, 33);
@@ -144,7 +150,7 @@
             this.imageButton2.Coloration = System.Drawing.Color.Empty;
             this.imageButton2.Image = ((System.Drawing.Image)(resources.GetObject("imageButton2.Image")));
             this.imageButton2.JogDirection = LaserGRBL.GrblCore.JogDirection.N;
-            this.imageButton2.Location = new System.Drawing.Point(127, 11);
+            this.imageButton2.Location = new System.Drawing.Point(115, 18);
             this.imageButton2.MaximumSize = new System.Drawing.Size(48, 48);
             this.imageButton2.Name = "imageButton2";
             this.imageButton2.Size = new System.Drawing.Size(33, 33);
@@ -161,7 +167,7 @@
             this.imageButton4.Coloration = System.Drawing.Color.Empty;
             this.imageButton4.Image = ((System.Drawing.Image)(resources.GetObject("imageButton4.Image")));
             this.imageButton4.JogDirection = LaserGRBL.GrblCore.JogDirection.E;
-            this.imageButton4.Location = new System.Drawing.Point(168, 50);
+            this.imageButton4.Location = new System.Drawing.Point(156, 57);
             this.imageButton4.MaximumSize = new System.Drawing.Size(48, 48);
             this.imageButton4.Name = "imageButton4";
             this.imageButton4.Size = new System.Drawing.Size(33, 33);
@@ -178,7 +184,7 @@
             this.imageButton6.Coloration = System.Drawing.Color.Empty;
             this.imageButton6.Image = ((System.Drawing.Image)(resources.GetObject("imageButton6.Image")));
             this.imageButton6.JogDirection = LaserGRBL.GrblCore.JogDirection.NW;
-            this.imageButton6.Location = new System.Drawing.Point(86, 11);
+            this.imageButton6.Location = new System.Drawing.Point(74, 18);
             this.imageButton6.MaximumSize = new System.Drawing.Size(48, 48);
             this.imageButton6.Name = "imageButton6";
             this.imageButton6.Size = new System.Drawing.Size(33, 33);
@@ -195,7 +201,7 @@
             this.imageButton5.Coloration = System.Drawing.Color.Empty;
             this.imageButton5.Image = ((System.Drawing.Image)(resources.GetObject("imageButton5.Image")));
             this.imageButton5.JogDirection = LaserGRBL.GrblCore.JogDirection.NE;
-            this.imageButton5.Location = new System.Drawing.Point(168, 11);
+            this.imageButton5.Location = new System.Drawing.Point(156, 18);
             this.imageButton5.MaximumSize = new System.Drawing.Size(48, 48);
             this.imageButton5.Name = "imageButton5";
             this.imageButton5.Size = new System.Drawing.Size(33, 33);
@@ -212,7 +218,7 @@
             this.imageButton8.Coloration = System.Drawing.Color.Empty;
             this.imageButton8.Image = ((System.Drawing.Image)(resources.GetObject("imageButton8.Image")));
             this.imageButton8.JogDirection = LaserGRBL.GrblCore.JogDirection.S;
-            this.imageButton8.Location = new System.Drawing.Point(126, 89);
+            this.imageButton8.Location = new System.Drawing.Point(114, 96);
             this.imageButton8.MaximumSize = new System.Drawing.Size(48, 48);
             this.imageButton8.Name = "imageButton8";
             this.imageButton8.Size = new System.Drawing.Size(35, 35);
@@ -229,7 +235,7 @@
             this.imageButton7.Coloration = System.Drawing.Color.Empty;
             this.imageButton7.Image = ((System.Drawing.Image)(resources.GetObject("imageButton7.Image")));
             this.imageButton7.JogDirection = LaserGRBL.GrblCore.JogDirection.SW;
-            this.imageButton7.Location = new System.Drawing.Point(85, 89);
+            this.imageButton7.Location = new System.Drawing.Point(73, 96);
             this.imageButton7.MaximumSize = new System.Drawing.Size(48, 48);
             this.imageButton7.Name = "imageButton7";
             this.imageButton7.Size = new System.Drawing.Size(35, 35);
@@ -246,7 +252,7 @@
             this.imageButton3.Coloration = System.Drawing.Color.Empty;
             this.imageButton3.Image = ((System.Drawing.Image)(resources.GetObject("imageButton3.Image")));
             this.imageButton3.JogDirection = LaserGRBL.GrblCore.JogDirection.SE;
-            this.imageButton3.Location = new System.Drawing.Point(167, 89);
+            this.imageButton3.Location = new System.Drawing.Point(155, 96);
             this.imageButton3.MaximumSize = new System.Drawing.Size(48, 48);
             this.imageButton3.Name = "imageButton3";
             this.imageButton3.Size = new System.Drawing.Size(35, 35);
@@ -264,7 +270,7 @@
             this.tableLayoutPanel1.Controls.Add(this.TbSpeed, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.LblSpeed, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(31, 8);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(19, 15);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -311,7 +317,7 @@
             this.tableLayoutPanel2.Controls.Add(this.TbStep, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.LblStep, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(205, 8);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(193, 15);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
@@ -361,23 +367,61 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.flowLayoutPanel2);
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel3);
-            this.splitContainer1.Size = new System.Drawing.Size(558, 136);
-            this.splitContainer1.SplitterDistance = 288;
+            this.splitContainer1.Size = new System.Drawing.Size(692, 150);
+            this.splitContainer1.SplitterDistance = 263;
             this.splitContainer1.TabIndex = 1;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.label3);
+            this.flowLayoutPanel2.Controls.Add(this.button4);
+            this.flowLayoutPanel2.Controls.Add(this.textBox1);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 111);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(425, 39);
+            this.flowLayoutPanel2.TabIndex = 12;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Settings File:";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(76, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "File";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(157, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(229, 20);
+            this.textBox1.TabIndex = 1;
             // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.button3, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label2, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.numericUpDown1, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.numericUpDown2, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.button1, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.button2, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.button3, 0, 3);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -386,18 +430,8 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(266, 111);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(425, 111);
             this.tableLayoutPanel3.TabIndex = 0;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(3, 84);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Home";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
@@ -405,7 +439,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label1.Location = new System.Drawing.Point(3, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 13);
+            this.label1.Size = new System.Drawing.Size(206, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Distance to First Plate";
             // 
@@ -413,9 +447,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label2.Location = new System.Drawing.Point(136, 13);
+            this.label2.Location = new System.Drawing.Point(215, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 13);
+            this.label2.Size = new System.Drawing.Size(207, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Distance Between Plates";
             // 
@@ -429,7 +463,7 @@
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(136, 29);
+            this.numericUpDown2.Location = new System.Drawing.Point(215, 29);
             this.numericUpDown2.Maximum = new decimal(new int[] {
             200,
             0,
@@ -452,7 +486,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(136, 55);
+            this.button2.Location = new System.Drawing.Point(215, 55);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 7;
@@ -460,11 +494,25 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(3, 84);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "Home";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // JogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 136);
+            this.ClientSize = new System.Drawing.Size(692, 150);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MinimumSize = new System.Drawing.Size(500, 175);
@@ -482,6 +530,8 @@
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -518,5 +568,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

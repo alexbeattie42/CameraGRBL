@@ -142,5 +142,17 @@ namespace LaserGRBL.Properties {
                 this["speed"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\Public\\")]
+        public string cameraSettingsLocation {
+            get {
+                return ((string)(this["cameraSettingsLocation"]));
+            }
+            set {
+                this["cameraSettingsLocation"] = value;
+            }
+        }
     }
 }

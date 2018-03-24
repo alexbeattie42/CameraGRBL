@@ -32,5 +32,8 @@
     <Setting Name="speed" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">10000</Value>
     </Setting>
+    <Setting Name="cameraSettingsLocation" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\Public\</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

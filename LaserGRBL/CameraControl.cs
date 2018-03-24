@@ -22,6 +22,7 @@ namespace LaserGRBL
         private bool home = false;
         private bool goToFirstPlate = true;
         private bool firstRun = true;
+        private bool settingsLoaded = false;
         
      
         
@@ -43,9 +44,10 @@ namespace LaserGRBL
         {
         
             Console.WriteLine("Camera Loaded");
-
+      
 
             numericUpDown1.Maximum = MAX_NUM_PLATES;
+            numericUpDown2.Maximum = MAX_NUM_PLATES;
         numericUpDown1.Value = Properties.Settings.Default.numPlates;
             
 
@@ -94,10 +96,12 @@ namespace LaserGRBL
             if (runningCycle)
             {
                 button1.Enabled = false;
+                button5.Enabled = false;
             }
-            else if (m_CameraList.SelectedItem != null && Core.IsOpen )
+            else if ( Core.IsOpen )
             {
                 button1.Enabled = true;
+                button5.Enabled = true;
             }
 
             Console.WriteLine("Machine Position" + Core.MachinePosition);
@@ -140,6 +144,7 @@ namespace LaserGRBL
                         //Core.GrblHoming();
                   
                     button1.Enabled = true;
+                    button5.Enabled = true;
                   
                 }
       
@@ -192,8 +197,8 @@ namespace LaserGRBL
         public void LogError(string message)
         {
             LogMessage(message);
-
-            MessageBox.Show(message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            runningCycle = false;
+            //MessageBox.Show(message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         public void UpdateCameraList()
@@ -259,32 +264,11 @@ namespace LaserGRBL
         }
         private void m_AcquireButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                //Determine selected camera
-                CameraInfo selectedItem = m_CameraList.SelectedItem as CameraInfo;
-                if (null == selectedItem)
-                {
-                    throw new NullReferenceException("No camera selected.");
-                }
-
-                //Acquire an image synchronously (snap) from selected camera
-
-                Image image = VimbaHelper.AcquireSingleImage(selectedItem.ID);
-
-                //Display image
-                m_PictureBox.Image = image;
-
-                LogMessage("Image acquired synchronously.");
-            }
-            catch (Exception exception)
-            {
-                LogError("Could not acquire image. Reason: " + exception.Message);
-            }
+            CapSaveImage();
         }
 
-        //Toggle mode between zoomed and 1:1 image display
-        private void ToogleDisplayMode()
+            //Toggle mode between zoomed and 1:1 image display
+            private void ToogleDisplayMode()
         {
             if (PictureBoxSizeMode.Zoom == m_PictureBox.SizeMode)
             {
@@ -352,8 +336,21 @@ namespace LaserGRBL
        
         public void CapSaveImage()
         {
-       
 
+            if (!settingsLoaded)
+            {
+                string cameraSettingsFileName = Properties.Settings.Default.cameraSettingsLocation;
+                if (File.Exists(cameraSettingsFileName))
+                {
+                    LogMessage("Loading camera settings");
+                    VimbaHelper.loadCamSettings(cameraSettingsFileName, selectedItem.ID);
+                    settingsLoaded = true;
+                }
+                else
+                {
+                    LogError("Invalid file name for Camera Settings");
+                }
+            }
             try
             {
                 //Determine selected camera
@@ -405,6 +402,7 @@ namespace LaserGRBL
             currentIndex = 0;
             bool isPlateFound = FindCheckedBox(currentIndex, true);
             button1.Enabled = false;
+            
             if (!isPlateFound){
                 return;
             }
@@ -418,7 +416,7 @@ namespace LaserGRBL
             }
             else if (firstRun)
             {
-
+                
                 Core.GrblHoming();
 
                 goToFirstPlate = true;
@@ -476,6 +474,17 @@ namespace LaserGRBL
                 }
                 
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Core.EnqueueCommand(Core.buildMotionCommand((int)numericUpDown2.Value));
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            LogMessage("Stopping");
+            runningCycle = false;
         }
     }
 }

@@ -15,8 +15,8 @@ namespace LaserGRBL
             SetCore(core);
             numericUpDown1.Value = Properties.Settings.Default.startDistance;
             numericUpDown2.Value = Properties.Settings.Default.betweenDistance;
+            textBox1.Text = Properties.Settings.Default.cameraSettingsLocation;
 
-           
         }
 
         internal static void CreateAndShowDialog(GrblCore core)
@@ -115,6 +115,16 @@ namespace LaserGRBL
             Console.WriteLine(sb.ToString());
             Core.EnqueueCommand(new GrblCommand(sb.ToString()));
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                textBox1.Text = openFileDialog1.FileName;
+                Properties.Settings.Default.cameraSettingsLocation = openFileDialog1.FileName;
+                Properties.Settings.Default.Save();
+            }
         }
     }
 

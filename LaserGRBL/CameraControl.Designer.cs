@@ -43,25 +43,34 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.m_AcquireButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
+            this.m_AcquireButton = new System.Windows.Forms.Button();
             this.m_PictureBox = new System.Windows.Forms.PictureBox();
             this.m_LogTable = new System.Windows.Forms.TableLayoutPanel();
             this.m_LogList = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.m_CameraListTable.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.flowLayoutPanel3.SuspendLayout();
+            this.flowLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_PictureBox)).BeginInit();
             this.m_LogTable.SuspendLayout();
+            this.flowLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // m_CameraListTable
@@ -75,10 +84,10 @@
             this.m_CameraListTable.Controls.Add(this.label4, 0, 2);
             this.m_CameraListTable.Controls.Add(this.flowLayoutPanel4, 0, 7);
             this.m_CameraListTable.Controls.Add(this.label5, 0, 6);
-            this.m_CameraListTable.Controls.Add(this.m_AcquireButton, 0, 11);
             this.m_CameraListTable.Controls.Add(this.label6, 0, 4);
             this.m_CameraListTable.Controls.Add(this.flowLayoutPanel3, 0, 5);
-            this.m_CameraListTable.Controls.Add(this.button1, 0, 10);
+            this.m_CameraListTable.Controls.Add(this.flowLayoutPanel5, 0, 11);
+            this.m_CameraListTable.Controls.Add(this.flowLayoutPanel6, 0, 10);
             this.m_CameraListTable.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_CameraListTable.Location = new System.Drawing.Point(0, 0);
             this.m_CameraListTable.Name = "m_CameraListTable";
@@ -93,8 +102,8 @@
             this.m_CameraListTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
             this.m_CameraListTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.m_CameraListTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.m_CameraListTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.m_CameraListTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.m_CameraListTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.m_CameraListTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.m_CameraListTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.m_CameraListTable.Size = new System.Drawing.Size(329, 508);
             this.m_CameraListTable.TabIndex = 5;
@@ -225,22 +234,6 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "Plate Configuration";
             // 
-            // m_AcquireButton
-            // 
-            this.m_AcquireButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.m_AcquireButton.AutoSize = true;
-            this.m_AcquireButton.Enabled = false;
-            this.m_AcquireButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_AcquireButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.m_AcquireButton.Location = new System.Drawing.Point(89, 470);
-            this.m_AcquireButton.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.m_AcquireButton.Name = "m_AcquireButton";
-            this.m_AcquireButton.Size = new System.Drawing.Size(150, 38);
-            this.m_AcquireButton.TabIndex = 3;
-            this.m_AcquireButton.Text = "Acquire single image";
-            this.m_AcquireButton.UseVisualStyleBackColor = true;
-            this.m_AcquireButton.Click += new System.EventHandler(this.m_AcquireButton_Click);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -288,6 +281,15 @@
             this.comboBox1.TabIndex = 3;
             this.comboBox1.Text = ".png";
             // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.Controls.Add(this.button1);
+            this.flowLayoutPanel5.Controls.Add(this.m_AcquireButton);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 457);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(320, 48);
+            this.flowLayoutPanel5.TabIndex = 17;
+            // 
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -297,7 +299,7 @@
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button1.Location = new System.Drawing.Point(89, 425);
+            this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(151, 39);
             this.button1.TabIndex = 8;
@@ -305,6 +307,22 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // m_AcquireButton
+            // 
+            this.m_AcquireButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.m_AcquireButton.AutoSize = true;
+            this.m_AcquireButton.Enabled = false;
+            this.m_AcquireButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_AcquireButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.m_AcquireButton.Location = new System.Drawing.Point(157, 3);
+            this.m_AcquireButton.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.m_AcquireButton.Name = "m_AcquireButton";
+            this.m_AcquireButton.Size = new System.Drawing.Size(150, 38);
+            this.m_AcquireButton.TabIndex = 3;
+            this.m_AcquireButton.Text = "Acquire single image";
+            this.m_AcquireButton.UseVisualStyleBackColor = true;
+            this.m_AcquireButton.Click += new System.EventHandler(this.m_AcquireButton_Click);
             // 
             // m_PictureBox
             // 
@@ -356,6 +374,55 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Log messages:";
             // 
+            // flowLayoutPanel6
+            // 
+            this.flowLayoutPanel6.Controls.Add(this.label7);
+            this.flowLayoutPanel6.Controls.Add(this.numericUpDown2);
+            this.flowLayoutPanel6.Controls.Add(this.button5);
+            this.flowLayoutPanel6.Controls.Add(this.button6);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(3, 407);
+            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(323, 44);
+            this.flowLayoutPanel6.TabIndex = 18;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 8);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 13);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Go To Plate:";
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(76, 3);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(34, 20);
+            this.numericUpDown2.TabIndex = 10;
+            // 
+            // button5
+            // 
+            this.button5.Enabled = false;
+            this.button5.Location = new System.Drawing.Point(116, 3);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "Move";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(197, 3);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 11;
+            this.button6.Text = "Stop";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // CameraControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -375,9 +442,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
+            this.flowLayoutPanel5.ResumeLayout(false);
+            this.flowLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_PictureBox)).EndInit();
             this.m_LogTable.ResumeLayout(false);
             this.m_LogTable.PerformLayout();
+            this.flowLayoutPanel6.ResumeLayout(false);
+            this.flowLayoutPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -410,5 +482,11 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }
